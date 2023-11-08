@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hflCZFSqA6Ro6gO060sgtYKvKGMEL2a9z1Kk6gW/mLE=",
+  "Hash": "SPHNo2oKI7T0EhRSha1qN4eS5UAbJ89rOvdFecl1TSY=",
   "Source": "TPFinal",
   "BasePath": "_content/TPFinal",
   "Mode": "Default",
@@ -85,12 +85,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\wwwroot\\imgs\\unnamed.jpg",
+      "Identity": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\wwwroot\\imgs\\OIG.jfif",
       "SourceId": "TPFinal",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\wwwroot\\",
       "BasePath": "_content/TPFinal",
-      "RelativePath": "imgs/unnamed.jpg",
+      "RelativePath": "imgs/OIG.jfif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -99,7 +99,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imgs\\unnamed.jpg"
+      "OriginalItemSpec": "wwwroot\\imgs\\OIG.jfif"
     },
     {
       "Identity": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\wwwroot\\js\\site.js",

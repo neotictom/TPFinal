@@ -5,22 +5,32 @@ a.navbar-brand[b-l785ugwjq9] {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-}
-
-a[b-l785ugwjq9] {
-  color: #0077cc;
+  
+} 
+.navbar[b-l785ugwjq9]{
+  background-color: #001426 !important;
 }
 
 .btn-primary[b-l785ugwjq9] {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  background-color: #37426B;
+  border-color: #37426B;
+text-decoration-color: #e5e5e5 !important;
+  width: 125px;
+  height: 50px;
+  margin: left 2% !important;
 }
-
+.carousel-item[b-l785ugwjq9]{
+  width: 20% !important ;
+  height: auto !important;
+}
 .nav-pills .nav-link.active[b-l785ugwjq9], .nav-pills .show > .nav-link[b-l785ugwjq9] {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+  
+}
+.navbar-brand[b-l785ugwjq9]{
+  margin: 2% !important; 
 }
 
 .border-top[b-l785ugwjq9] {
@@ -40,9 +50,12 @@ button.accept-policy[b-l785ugwjq9] {
 }
 
 .footer[b-l785ugwjq9] {
+  background-color: #001426 !important;
+  color: #e5e5e5;
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
 }
+

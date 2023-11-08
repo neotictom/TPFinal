@@ -17,6 +17,9 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Armadopc(){
+        return View("Armadopc");
+    }
 
     public IActionResult Privacy()
     {

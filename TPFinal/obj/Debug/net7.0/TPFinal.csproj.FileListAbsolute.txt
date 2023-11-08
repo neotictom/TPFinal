@@ -31,3 +31,4 @@ C:\Users\47496739\Downloads\TPFinal\TPFinal\obj\Debug\net7.0\TPFinal.genruntimec
 C:\Users\47496739\Downloads\TPFinal\TPFinal\obj\Debug\net7.0\ref\TPFinal.dll
 C:\Users\47496739\Downloads\TPFinal\TPFinal\bin\Debug\net7.0\package-lock.json
 C:\Users\47496739\Downloads\TPFinal\TPFinal\bin\Debug\net7.0\package.json
+C:\Users\47496739\Downloads\TPFinal\TPFinal\bin\Debug\net7.0\productos.json
