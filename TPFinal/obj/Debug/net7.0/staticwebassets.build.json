@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SPHNo2oKI7T0EhRSha1qN4eS5UAbJ89rOvdFecl1TSY=",
+  "Hash": "zF1mn2mBOUTZGOxvPiERr6hoF+gkyP0OtvN1jlTu/vQ=",
   "Source": "TPFinal",
   "BasePath": "_content/TPFinal",
   "Mode": "Default",
@@ -85,12 +85,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\wwwroot\\imgs\\OIG.jfif",
+      "Identity": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\wwwroot\\imgs\\banner.jpg",
       "SourceId": "TPFinal",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\wwwroot\\",
       "BasePath": "_content/TPFinal",
-      "RelativePath": "imgs/OIG.jfif",
+      "RelativePath": "imgs/banner.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -99,7 +99,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imgs\\OIG.jfif"
+      "OriginalItemSpec": "wwwroot\\imgs\\banner.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\wwwroot\\imgs\\OIG.jpg",
+      "SourceId": "TPFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\wwwroot\\",
+      "BasePath": "_content/TPFinal",
+      "RelativePath": "imgs/OIG.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\OIG.jpg"
     },
     {
       "Identity": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\wwwroot\\js\\site.js",

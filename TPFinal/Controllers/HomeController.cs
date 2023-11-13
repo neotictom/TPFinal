@@ -25,6 +25,12 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Perfil(){
+        return View("Perfil");
+    }
+    public IActionResult Login(){
+        return View("Login");
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

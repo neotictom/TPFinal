@@ -13,8 +13,12 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\wwwroot\\imgs\\OIG.jfif",
-      "PackagePath": "staticwebassets\\imgs\\OIG.jfif"
+      "Id": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\wwwroot\\imgs\\OIG.jpg",
+      "PackagePath": "staticwebassets\\imgs\\OIG.jpg"
+    },
+    {
+      "Id": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\wwwroot\\imgs\\banner.jpg",
+      "PackagePath": "staticwebassets\\imgs\\banner.jpg"
     },
     {
       "Id": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\wwwroot\\js\\site.js",

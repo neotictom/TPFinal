@@ -11,6 +11,7 @@ a.navbar-brand {
   background-color: #001426 !important;
 }
 
+
 .btn-primary {
   background-color: #37426B;
   border-color: #37426B;
@@ -19,10 +20,7 @@ text-decoration-color: #e5e5e5 !important;
   height: 50px;
   margin: left 2% !important;
 }
-.carousel-item{
-  width: 20% !important ;
-  height: auto !important;
-}
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
   background-color: #1b6ec2;
