@@ -1,73 +1,39 @@
 ﻿@{
   ViewData["Title"] = "Index";
 }
-<link rel="stylesheet" href="Home/wwwroot/css">
  
-    <img class="banner" src="~/imgs/banner.jpg">
+<img class="banner" src="~/imgs/banner.jpg">
  <div class=Main>
-    <h3>Armá tu pc</h3>
-    <p>Ofertas</p>
-    
-    <main>
-        <section class="main">
-
-            <!-------------- TIPO DE COMPONENETES ----------->
-            <div class="main__componentes">
-                <div class="main__componentes--tarjeta">
-                    <h1 class="main__componentes--titulo">procesador</h1>
-                
-                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">y
-                            <div class="carousel-item active">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="main__componentes--tarjeta">
-                    <h1 class="main__componentes--titulo">Cooler</h1>
-                </div>
-
-                <div class="main__componentes--tarjeta">
-                    <h1 class="main__componentes--titulo">Mother</h1>
-                </div>
-
-                <div class="main__componentes--tarjeta">
-                    <h1 class="main__componentes--titulo">Ram</h1>
-                </div>
-
-                <div class="main__componentes--tarjeta">
-                    <h1 class="main__componentes--titulo">Placa de video</h1>
-                </div>
-
-                <div class="main__componentes--tarjeta">
-                    <h1 class="main__componentes--titulo">SSD</h1>
-                </div>
-
-                <div class="main__componentes--tarjeta">
-                    <h1 class="main__componentes--titulo">HDD</h1>
-                </div>
-
-                <div class="main__componentes--tarjeta">
-                    <h1 class="main__componentes--titulo">fuente</h1>
-                </div>
-
-                <div class="main__componentes--tarjeta">
-                    <h1 class="main__componentes--titulo">Gabinete</h1>
-                </div>
-            </div>
-
-            <!-------------- INICIO CATÁLOGO ----------->
-            <div class="main__catalogo">
-                <div class="main__catalogo--tarjeta">
-                    <h1 class="main__catalogo--titulo">AMD</h1>
-                </div>
-
-                <div class="main__catalogo--tarjeta">
-                    <h1 class="main__catalogo--titulo">Intel</h1>
-                </div>
-
-            </div>
-        </section>
-    </main>
+    <h1 class="pt-3">Productos en oferta</h1>
  </div>
+ <div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  @{for(int i = 0; i < 5; i++){
+  Random rnd = new Random();
+  int random = rnd.Next(1,44);
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="@ViewBag.Productos.img(random)"  alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>@ViewBag.Productos </h5>
+        <p></p>
+      </div>
+    </div>
+    
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br>
+<p class="pb-5 mb-5"></p>
+}
+}

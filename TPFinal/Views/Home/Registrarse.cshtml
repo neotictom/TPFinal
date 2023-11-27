@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Register";
+}
+<div class="pt-5 mt-5">
+    <label for="inputPassword6" class="col-form-label">Usuario</label>
+  <div class="col-auto">
+    <input type="text" placeholder="Username" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+  </div>
+    <span id="passwordHelpInline" class="form-text">
+      Ingrese su usuario.
+    </span>
+</div>
+<div>
+    <label for="inputPassword6" class="col-form-label">Mail</label>
+  <div class="col-auto">
+    <input type="text" placeholder="E-Mail" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+  </div>
+    <span id="passwordHelpInline" class="form-text">
+      Ingrese su mail.
+    </span>
+</div>
+<div>
+    <label for="inputPassword6" class="col-form-label">Password</label>
+  <div class="col-auto">
+    <input type="password" placeholder="Password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+  </div>
+    <span id="passwordHelpInline" class="form-text">
+      Must be 8-20 characters long.
+    </span>
+</div>
+<div>
+    <label for="inputPassword6" class="col-form-label">Dirección</label>
+  <div class="col-auto">
+    <input type="text" placeholder="Dirección" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+  </div>
+    <span id="passwordHelpInline" class="form-text">
+      Ingrese su dirección.
+    </span>
+</div>
+<div>
+    <label for="inputPassword6" class="col-form-label">Teléfono</label>
+  <div class="col-auto">
+    <input type="text" placeholder="Teléfono" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+  </div>
+    <span id="passwordHelpInline" class="form-text">
+      Ingrese su dirección.
+    </span>
+</div>
+<a href='@Url.Action("Index,Home")' class="btn btn-primary mt-4" tabindex="-1" role="button" aria-disabled="true">Register</a>
+</div>

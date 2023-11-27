@@ -20,27 +20,36 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
-                        <li class="nav-item">
-                            <button type="button" class="btn btn-primary " data-bs-theme="$white"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a></button>
+                        <li class="px-4">
+                            <!--<button type="button" class="btn btn-primary " data-bs-theme="$white"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a></button>-->
+                            <a class="nav-link text-white" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <button type="button" class="btn btn-primary" data-bs-theme="$white"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Armadopc">Arma tu pc</a></button>
+                        <li class="px-4">
+                            <!--<button type="button" class="btn btn-primary" data-bs-theme="$white"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Armadopc">Arma tu pc</a></button>-->
+                            <a class="nav-link text-white" asp-controller="Home" asp-action="Armadopc">Armá tu PC</a>
                         </li>
-                        <li class="nav-item">
-                            <button type="button" class="btn btn-primary" data-bs-theme="$white"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Perfil">Perfil</a></button>
+                        <!--<li class="px-4">-->
+                            <!--<button type="button" class="btn btn-primary" data-bs-theme="$white"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Perfil">Perfil</a></button>-->
+                            <!--<a class="nav-link text-white" asp-controller="Home" asp-action="Perfil">Perfil</a>
+                        </li>-->
+                        <li class="px-4">
+                            <!--<button type="button" class="btn btn-primary" data-bs-theme="$white"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Login">Login</a></button>-->
+                            <a class="nav-link text-white" asp-controller="Home" asp-action="Login">Login</a>
                         </li>
-                        <li class="nav-item">
-                            <button type="button" class="btn btn-primary" data-bs-theme="$white"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Login">Login</a></button>
-                        </li>
-                        <li class="nav-item">
-                        <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" ><button class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
-                        </form>
-                        </li>
-                        
-                    </ul>
-                    
                 </div>
+                        <!--<form class="collapse d-sm-inline-flex">
+                            <li>
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            </li>
+                            <li class="pt-4">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
+                            </li>
+                        </form>
+
+                        
+                    </ul>-->
+                    
+                
                 
             </div>
         </nav>
@@ -51,13 +60,13 @@
         </main>
     </div>
 
-    <!--
+    
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - TPFinal - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    -->
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

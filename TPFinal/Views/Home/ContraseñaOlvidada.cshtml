@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "olvide mi contraseña";
+}
+
+<form method="get" action='@Url.Action("CambiarContraseña", "Home")'>
+<div class="pt-5 mb-5">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Usuario</label>
+    <input name="Username" type="text" class="form-control inputrequired" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="Username">
+  </div>
+
+    <!-- ingrese contraseña -->
+  <div class="mb-3">
+    <label for="inputPassword5" class="form-label">Contraseña</label>
+    <input name="Contraseña" type="password" class="form-control inputrequired" placeholder="Contraseña" aria-label="Password" aria-describedby="basic-addon1" id="Contraseña">
+    <div id="infocontraseña" class="form-text">
+      <span>La contraseña debe tener: </span> <span style="color:red" id="largo">entre 8 y 100 caracteres</span><span style="color:red" id="caracterEspecial">, al menos un caracter especial</span><span style="color:red" id="letraMayuscula"> y al menos una letra en mayuscula.</span>
+    </div>
+</div>
+
+<div class="mb-3">
+<label for="inputPassword5" class="form-label">Repita su contraseña</label>
+<input name="ContraseñaConfirmada" type="password" class="form-control inputrequired" placeholder="Confirmar Contraseña" aria-label="ConfPass" aria-describedby="basic-addon1" id="ContraseñaConfirmada">
+    <div id="coincidenciacontras" class="form-text">
+        <span id="coinciden"style="color:red"></span>
+    </div>
+</div>
+  <button type="submit"  id="submitform" class="btn btn-primary">Cambiar Contraseña</button>
+</form>
+<script src="~/js/site.js"></script>

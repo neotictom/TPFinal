@@ -15,6 +15,9 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        Random rnd = new Random();
+        ViewBag.rndnum = rnd.Next(1,44);
+        ViewBag.Productos = BD.ListarProductos();
         return View();
     }
     public IActionResult Armadopc(){
@@ -29,9 +32,22 @@ public class HomeController : Controller
         return View("Perfil");
     }
     public IActionResult Login(){
-        return View("Login");
+        return View("InicioSesion");
+    }
+    public IActionResult Registrarse(){
+        
+        return View("Registrarse");
     }
 
+    /*[HttpPost]
+    public IActionResult GuardarCuenta{
+
+    }*/
+
+    public IActionResult ContraseñaOlvidada()
+    {
+        return View("ContraseñaOlvidada");
+    }
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

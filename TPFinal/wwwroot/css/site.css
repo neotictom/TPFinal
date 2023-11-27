@@ -38,3 +38,10 @@ body {
   height: 240px;
   width: 360px;
 }
+.register{
+  justify-content: center !important;
+  text-align: center !important;
+  background-color: grey;
+  height: 240px;
+  width: 360px;
+}
