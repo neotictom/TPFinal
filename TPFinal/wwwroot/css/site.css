@@ -45,3 +45,13 @@ body {
   height: 240px;
   width: 360px;
 }
+.flexFix{
+  display: flex;
+  justify-content: space-evenly;
+}
+.card-title{
+  justify-content: end;
+}
+.card-img-top{
+  height: 18rem;
+}

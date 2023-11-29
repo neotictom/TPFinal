@@ -51,7 +51,9 @@
                             Choose
                         </button>
                         <div class="dropdown-menu" aria-labelledby="motherboardD">
-                            <motherboard></motherboard>
+                            @for(int i = 0; i<ViewBag.Motherboard.length; i++ ){
+                                ViewBag.Motherboard[i];
+                            }
                         </div>
                     </div>
                     <p class="mt-1 cPointer">
@@ -73,7 +75,7 @@
                             Choose
                         </button>
                         <div class="dropdown-menu" aria-labelledby="gpuD">
-                            <gpu></gpu>
+                            
                         </div>
                     </div>
                     <p class="mt-1 cPointer ">
@@ -419,6 +421,14 @@
                 $("#foot").fadeOut(300);
             }
         });
+
+
+
+
+
+
+
+        
     </script>
 </body>
 

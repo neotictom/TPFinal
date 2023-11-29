@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using TPFinal.Models;
+using System.Collections.Generic;
 
 namespace TPFinal.Controllers;
 
@@ -14,13 +15,15 @@ public class HomeController : Controller
     }
 
     public IActionResult Index()
-    {
-        Random rnd = new Random();
-        ViewBag.rndnum = rnd.Next(1,44);
+    { 
+         
         ViewBag.Productos = BD.ListarProductos();
+        // = ListaProductos;
         return View();
     }
     public IActionResult Armadopc(){
+        List<Producto> ListaProductos = BD.ListarProductos();
+        //ViewBag.MotherBoard = ListaProductos.Nombre.IndexOf("Motherboard");
         return View("Armadopc");
     }
 
@@ -38,7 +41,11 @@ public class HomeController : Controller
         
         return View("Registrarse");
     }
-
+    public IActionResult UsuRegistrar(Usuario usu)
+    {
+        BD.RegistrarUsuario(usu);
+        return View("InicioSesion");
+    }
     /*[HttpPost]
     public IActionResult GuardarCuenta{
 

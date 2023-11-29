@@ -1,50 +1,79 @@
 @{
     ViewData["Title"] = "Register";
 }
-<div class="pt-5 mt-5">
+<form action='@Url.Action("UsuRegistrar")'>
+<div class="mt-5">
+    <label for="inputPassword6" class="col-form-label">Nombre</label>
+  <div class="col-auto">
+    <input name="Nombre" type="text" placeholder="Nombre" id="Nombre" class="form-control" aria-describedby="passwordHelpInline">
+  </div>
+    <span id="passwordHelpInline" class="form-text">
+      Ingrese su Nombre.
+    </span>
+</div>
+<div>
+    <label for="inputPassword6" class="col-form-label">Apellido</label>
+  <div class="col-auto">
+    <input name="Apellido" type="text" placeholder="Apellido" id="Apellido" class="form-control" aria-describedby="passwordHelpInline">
+  </div>
+    <span id="passwordHelpInline" class="form-text">
+      Ingrese su Apellido.
+    </span>
+</div>
+<div>
     <label for="inputPassword6" class="col-form-label">Usuario</label>
   <div class="col-auto">
-    <input type="text" placeholder="Username" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+    <input name="Username" type="text" placeholder="Usuario" id="Username" class="form-control" aria-describedby="passwordHelpInline">
   </div>
     <span id="passwordHelpInline" class="form-text">
       Ingrese su usuario.
     </span>
 </div>
 <div>
+    <label for="inputPassword6" class="col-form-label">Contraseña</label>
+  <div class="col-auto">
+    <input name="Password" type="password" placeholder="Contraseña" id="Password" class="form-control" aria-describedby="passwordHelpInline">
+  </div>
+    <span id="passwordHelpInline" class="form-text">
+      De 8-20 Caracteres.
+    </span>
+</div>
+<div>
     <label for="inputPassword6" class="col-form-label">Mail</label>
   <div class="col-auto">
-    <input type="text" placeholder="E-Mail" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+    <input name="EMail" type="text" placeholder="E-Mail" id="EMail" class="form-control" aria-describedby="passwordHelpInline">
   </div>
     <span id="passwordHelpInline" class="form-text">
       Ingrese su mail.
     </span>
 </div>
 <div>
-    <label for="inputPassword6" class="col-form-label">Password</label>
+    <label for="inputPassword6" class="col-form-label">Teléfono</label>
   <div class="col-auto">
-    <input type="password" placeholder="Password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+    <input name="Telefono" type="text" placeholder="Teléfono" id="Telefono" class="form-control" aria-describedby="passwordHelpInline">
   </div>
     <span id="passwordHelpInline" class="form-text">
-      Must be 8-20 characters long.
+      Ingrese su Teléfono.
     </span>
 </div>
 <div>
     <label for="inputPassword6" class="col-form-label">Dirección</label>
   <div class="col-auto">
-    <input type="text" placeholder="Dirección" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+    <input name="Direccion" type="text" placeholder="Dirección" id="Direccion" class="form-control" aria-describedby="passwordHelpInline">
   </div>
     <span id="passwordHelpInline" class="form-text">
       Ingrese su dirección.
     </span>
 </div>
-<div>
-    <label for="inputPassword6" class="col-form-label">Teléfono</label>
+<div class="mb-4">
+    <label for="inputPassword6" class="col-form-label">URL de Foto de Perfil</label>
   <div class="col-auto">
-    <input type="text" placeholder="Teléfono" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+    <input name="FotoDePerfil" type="text" placeholder="FotoDePerfil" id="FotoDePerfil" class="form-control" aria-describedby="passwordHelpInline">
   </div>
     <span id="passwordHelpInline" class="form-text">
-      Ingrese su dirección.
+      Ingrese su Foto de Perfil.
     </span>
 </div>
-<a href='@Url.Action("Index,Home")' class="btn btn-primary mt-4" tabindex="-1" role="button" aria-disabled="true">Register</a>
+  <button type="submit" class="btn btn-success">Registrarse</button>
 </div>
+</form>
