@@ -5,84 +5,89 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TPFinal
 build_property.RootNamespace = TPFinal
-build_property.ProjectDir = D:\Downloads\TPFinal\TPFinal\
+build_property.ProjectDir = C:\Users\47496739\Downloads\TPFinal\TPFinal\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Downloads\TPFinal\TPFinal
+build_property.MSBuildProjectDirectory = C:\Users\47496739\Downloads\TPFinal\TPFinal
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Home/Account/PaginaInicio.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Home/Account/PaginaInicio.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2NvdW50XFBhZ2luYUluaWNpby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Home/Account/Registrado.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Home/Account/Registrado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2NvdW50XFJlZ2lzdHJhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Home/Account/Registrarse.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Home/Account/Registrarse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2NvdW50XFJlZ2lzdHJhcnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Home/Armadopc.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Home/Armadopc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcm1hZG9wYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Home/Browser.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Home/Browser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCcm93c2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Home/ContraseñaOlvidada.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Home/ContraseñaOlvidada.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250cmFzZcOxYU9sdmlkYWRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Home/Index.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Home/InicioSesion.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Home/InicioSesion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmljaW9TZXNpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Home/Login.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Home/Perfil.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Home/Perfil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZXJmaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Home/Privacy.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Home/Presupuesto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcmVzdXB1ZXN0by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Home/ProductoBuscado.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Home/ProductoBuscado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0b0J1c2NhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Home/Registrarse.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Home/Registrarse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3RyYXJzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Shared/Error.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/_ViewImports.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/_ViewStart.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Downloads/TPFinal/TPFinal/Views/Shared/_Layout.cshtml]
+[C:/Users/47496739/Downloads/TPFinal/TPFinal/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-l785ugwjq9

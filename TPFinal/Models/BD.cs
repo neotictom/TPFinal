@@ -2,14 +2,13 @@ using System.Data.SqlClient;
 using Dapper;
 
 public class BD{
-    private static string _connectionString = @"Server=DESKTOP-6QK3E9R\SQLEXPRESS01;DataBase=Techbuild;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=localhost;DataBase=Techbuild;Trusted_Connection=True;";
     public static List<Producto> ObtenerProducto(string cat)
     {
         string sql = "select * from Producto Where Categoria = @Categoria";
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-        
-        return db.Query<Producto>(sql, new { Categoria = cat }).ToList();
+            return db.Query<Producto>(sql, new { Categoria = cat }).ToList();
         }
     }
 
@@ -24,13 +23,13 @@ public class BD{
         }
         return user;
     }
-    public static void AgregarPedido(Pedidos p){
-        string sql = "INSERT INTO Pedidos (Motherboard,CPU,RAM,GPU,Almacenamiento,Cooler,Fuente,Gabinete,IdUsuario,Total)" + 
+    public static void AgregarPedido(Pedido p){
+        string sql = "INSERT INTO Pedido (Motherboard,CPU,RAM,GPU,Almacenamiento,Cooler,Fuente,Gabinete,IdUsuario,Total)" + 
                  "VALUES (@Motherboard,@CPU,@RAM,@GPU,@Almacenamiento,@Cooler,@Fuente,@Gabinete,@IdUsuario,@Total);";
         using (SqlConnection conexion = new SqlConnection(_connectionString))
         {
             conexion.Execute(sql, new{
-                Motherboard = p.MotherBoard,
+                Motherboard = p.Motherboard,
                 CPU = p.CPU,
                 RAM = p.RAM,
                 GPU = p.GPU,
@@ -83,12 +82,12 @@ public class BD{
             return conexion.Query<Usuario>(sql).ToList();
         }
     }
-    public static Usuario buscarUsuario(string Email,string Contraseña)
+    public static Usuario buscarUsuario(string usuario,string contraseña)
     {
         Usuario usu;
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql ="SELECT * FROM Usuario WHERE Email = @uEmail AND Contraseña= @uContraseña";
-            usu = db.QueryFirstOrDefault<Usuario>(sql,new {uEmail = Email, uContraseña = Contraseña});
+            string sql ="SELECT * FROM Usuario WHERE Username = @uUsername AND Password= @uContraseña";
+            usu = db.QueryFirstOrDefault<Usuario>(sql,new {uUsername = usuario, uContraseña = contraseña});
             }
         return usu;
     }

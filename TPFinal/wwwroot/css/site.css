@@ -64,3 +64,6 @@ body {
 .card-img-top{
   height: 18rem;
 }
+.products{
+  display: inline-block;
+}

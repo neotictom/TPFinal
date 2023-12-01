@@ -1,7 +1,7 @@
 using TPFinal.Models;
-public class Pedidos{
+public class Pedido{
     public int IdPedido{get;set;}
-    public int MotherBoard{get;set;}
+    public int Motherboard{get;set;}
     public int CPU {get;set;}
     public int RAM {get;set;}
     public int GPU {get;set;}

@@ -7,6 +7,9 @@ namespace TPFinal.Controllers;
 
 public class HomeController : Controller
 {
+
+    static Usuario user;
+    
     private readonly ILogger<HomeController> _logger;
 
     public HomeController(ILogger<HomeController> logger)
@@ -17,46 +20,62 @@ public class HomeController : Controller
     public IActionResult Index()
     { 
         ViewBag.Productos = BD.ListarProductos();
+        ViewBag.UsuarioLogueado = user;
         return View();
     }
-    public IActionResult Armadopc(){
-        
-        ViewBag.CPU = BD.ObtenerProducto("CPU");    
+    public IActionResult Armadopc(Pedido p){
+        ViewBag.Usuario = user;
+        ViewBag.IdPedido = p.IdPedido;
+        ViewBag.CPU = BD.ObtenerProducto("CPU");
+        ViewBag.Motherboard = BD.ObtenerProducto("Motherboard");
+        ViewBag.GPU = BD.ObtenerProducto("GPU");
+        ViewBag.RAM = BD.ObtenerProducto("RAM");
+        ViewBag.Almacenamiento = BD.ObtenerProducto("Almacenamiento");
+        ViewBag.Cooler = BD.ObtenerProducto("Cooler");
+        ViewBag.Gabinete = BD.ObtenerProducto("Gabinete");
+        ViewBag.Fuente = BD.ObtenerProducto("Fuente"); 
+        ViewBag.UsuarioLogueado = user;   
         return View("Armadopc");
     }
 
     public IActionResult Privacy()
     {
+        ViewBag.UsuarioLogueado = user;
         return View();
     }
-    public IActionResult Login(){
-        return View("InicioSesion");
-    }
-    [HttpPost] public IActionResult comprobarDatos(string Email, string Contraseña)
+
+    public IActionResult Login(string usuario, string contraseña)
     {
-        Usuario user = BD.buscarUsuario(Email,Contraseña);
+        user = BD.buscarUsuario(usuario,contraseña);
         if (user != null)
         {
-            ViewBag.Username = user.Username;
-            ViewBag.Email = user.Email;
-            ViewBag.Telefono = user.Telefono;
-            ViewBag.Direccion = user.Direccion;
-            return View("Logged");
+            ViewBag.LoginError = "";
+            ViewBag.Productos = BD.ListarProductos();
+            return RedirectToAction("Index", new{IdUsuario = user.IdUsuario});
         }
         else
         {
             ViewBag.LoginError = "Hubo un error al entrar, verifique los datos y vuelva a intentar";
-            return View("Index");
+            ViewBag.UsuarioLogueado = null;
+            return View("InicioSesion");
         }
     }
+
+    public IActionResult InicioSesion()
+    {
+        user = null;
+        ViewBag.LoginError = "";
+        return View("InicioSesion");
+    }
+
     public IActionResult Registrarse(){
         
         return View("Registrarse");
     }
-    /*public IActionResult GuardarPedido(Pedidos p){
+    public IActionResult GuardarPedido(Pedido p){
         BD.AgregarPedido(p);
-        return RedirectToAction("Index", new { idPedido = p.IdPedido });
-    }*/
+        return RedirectToAction("Presupuesto", new { idPedido = p.IdPedido });
+    }
     public IActionResult UsuRegistrar(Usuario usu)
     {
         BD.RegistrarUsuario(usu);
@@ -68,9 +87,18 @@ public class HomeController : Controller
     {
         return View("ContraseñaOlvidada");
     }
+    
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+    /*public IActionResult GuardarPedido()
+    {
+
+        ViewBag.UsuarioLogueado = user;
+        return View("Presupuesto");
+    }*/
+
 }

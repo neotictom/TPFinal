@@ -4,17 +4,17 @@
 
 <div class="mt-5 pt-5">
   <div class="mt-5 pt-5">
-    <form method="get" action='@Url.Action("Login", "Home")'>
+    <form action='@Url.Action("Login", "Home")'>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Usuario</label>
-        <input type="text" placeholder="E-Mail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usuario">
+        <input type="text" name="usuario" id="usuario" placeholder="Usuario" class="form-control">
         </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-        <input type="password" placeholder="Password" class="form-control" id="exampleInputPassword1" name="contraseña">
+        <input type="password" name="contraseña" id="contraseña" placeholder="Password" class="form-control">
       </div>
       <button type="submit" class="btn btn-primary">Ingresar</button>
-      <p>@ViewBag.ErrorInicio</p> 
+      <p>@ViewBag.LoginError</p> 
       <a href='@Url.Action("ContraseñaOlvidada", "Home")'>¿Olvidaste tu contraseña?</a> <br> 
       <a href='@Url.Action("Registrarse", "Home")'>¿Eres nuevo? Registrate</a>
     </form>
