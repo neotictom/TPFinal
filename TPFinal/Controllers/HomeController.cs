@@ -16,14 +16,12 @@ public class HomeController : Controller
 
     public IActionResult Index()
     { 
-         
         ViewBag.Productos = BD.ListarProductos();
-        // = ListaProductos;
         return View();
     }
     public IActionResult Armadopc(){
-        List<Producto> ListaProductos = BD.ListarProductos();
-        //ViewBag.MotherBoard = ListaProductos.Nombre.IndexOf("Motherboard");
+        
+        ViewBag.CPU = BD.ObtenerProducto("CPU");    
         return View("Armadopc");
     }
 
@@ -31,25 +29,40 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult Perfil(){
-        return View("Perfil");
-    }
     public IActionResult Login(){
         return View("InicioSesion");
+    }
+    [HttpPost] public IActionResult comprobarDatos(string Email, string Contraseña)
+    {
+        Usuario user = BD.buscarUsuario(Email,Contraseña);
+        if (user != null)
+        {
+            ViewBag.Username = user.Username;
+            ViewBag.Email = user.Email;
+            ViewBag.Telefono = user.Telefono;
+            ViewBag.Direccion = user.Direccion;
+            return View("Logged");
+        }
+        else
+        {
+            ViewBag.LoginError = "Hubo un error al entrar, verifique los datos y vuelva a intentar";
+            return View("Index");
+        }
     }
     public IActionResult Registrarse(){
         
         return View("Registrarse");
     }
+    /*public IActionResult GuardarPedido(Pedidos p){
+        BD.AgregarPedido(p);
+        return RedirectToAction("Index", new { idPedido = p.IdPedido });
+    }*/
     public IActionResult UsuRegistrar(Usuario usu)
     {
         BD.RegistrarUsuario(usu);
         return View("InicioSesion");
     }
-    /*[HttpPost]
-    public IActionResult GuardarCuenta{
-
-    }*/
+ 
 
     public IActionResult ContraseñaOlvidada()
     {

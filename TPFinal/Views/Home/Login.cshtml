@@ -1,32 +1,26 @@
 @{
     ViewData["Title"] = "Login";
 }
-<div class="login">
-<div class="row g-3 align-items-center">
-  <div class="col-auto">
-    <label for="inputPassword6" class="col-form-label">Usuario</label>
-  </div>
-  <div class="col-auto">
-    <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-  </div>
-  <div class="col-auto">
-    <span id="passwordHelpInline" class="form-text">
-      Ingrese su usuario.
-    </span>
-  </div>
-</div>
-<div class="row g-3 align-items-center">
-  <div class="col-auto">
-    <label for="inputPassword6" class="col-form-label">Password</label>
-  </div>
-  <div class="col-auto">
-    <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-  </div>
-  <div class="col-auto">
-    <span id="passwordHelpInline" class="form-text">
-      Must be 8-20 characters long.
-    </span>
-  </div>
-</div>
-<a href="/Index.cshtml" class="btn btn-primary disabled" tabindex="-1" role="button" aria-disabled="true">Log In</a>
-</div>
+ <form action='@Url.Action("comprobarDatos")' method="post">
+        <div class="mb-3">
+            <label for="Email" class="form-label">E-Mail</label>
+            <input name="Email" type="email" class="form-control" id="Email" aria-describedby="Email">
+        </div>
+        <div class="mb-3">
+            <label for="Contraseña" class="form-label">Contraseña</label>
+            <input name="Contraseña" type="password" class="form-control" id="Contraseña">
+            <div id="lol" class="form-text"><a href='@Url.Action("actualizarContraseña")'>¿Olvidaste Tu Contraseña?</a></div>
+        </div>
+
+        @if(ViewBag.LoginError != null)
+        {
+            <p style="color: crimson;" class="mb-2">@ViewBag.LoginError</p>
+        }
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Acepto los <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Términos y Condiciones</a></label>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <p class="pt-2">Eres Nuevo? <a href='@Url.Action("registrarUsuario")'>Registrate</a></p>
+    </form>

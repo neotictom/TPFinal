@@ -26,10 +26,13 @@ body {
   width: 75px !important;
 }
 .banner{
-  max-width: 100%;
-  height: 50% !important; 
-  display: block;
-  margin: 0 auto;
+  
+    width: 100%;
+    height: 700px;
+    justify-content: baseline;
+  
+  
+  
 }
 .login{
   justify-content: center !important;
@@ -48,6 +51,12 @@ body {
 .flexFix{
   display: flex;
   justify-content: space-evenly;
+ 
+}
+.card{
+  width: 18rem;
+  margin-right: 1%;
+  margin-left: 1%;
 }
 .card-title{
   justify-content: end;

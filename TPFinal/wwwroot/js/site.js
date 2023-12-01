@@ -20,3 +20,6 @@ function ValidarContraseña()
         return false
       }
 }
+function MostrarComponente(){
+  
+}
