@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TPFinal.Models;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace TPFinal.Controllers;
 
@@ -23,6 +24,9 @@ public class HomeController : Controller
         ViewBag.UsuarioLogueado = user;
         return View();
     }
+    public Producto DetalleComponente(int id){
+        return BD.ObtenerProductoById(id);
+    }
     public IActionResult Armadopc(Pedido p){
         ViewBag.Usuario = user;
         ViewBag.IdPedido = p.IdPedido;
@@ -34,7 +38,6 @@ public class HomeController : Controller
         ViewBag.Cooler = BD.ObtenerProducto("Cooler");
         ViewBag.Gabinete = BD.ObtenerProducto("Gabinete");
         ViewBag.Fuente = BD.ObtenerProducto("Fuente"); 
-        ViewBag.UsuarioLogueado = user;   
         return View("Armadopc");
     }
 
@@ -72,16 +75,19 @@ public class HomeController : Controller
         
         return View("Registrarse");
     }
-    public IActionResult GuardarPedido(Pedido p){
+    [HttpPost]public IActionResult Presupuesto(Pedido p){
         BD.AgregarPedido(p);
-        return RedirectToAction("Presupuesto", new { idPedido = p.IdPedido });
+        return RedirectToAction("Presupuesto");
     }
     public IActionResult UsuRegistrar(Usuario usu)
     {
         BD.RegistrarUsuario(usu);
         return View("InicioSesion");
     }
- 
+    public IActionResult BuscarProducto(string nom){
+        ViewBag.Prodbuscado = BD.BuscarProductoxnombre(nom);
+        return View("BuscarProducto");
+    }
 
     public IActionResult ContraseñaOlvidada()
     {
@@ -94,11 +100,6 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    /*public IActionResult GuardarPedido()
-    {
 
-        ViewBag.UsuarioLogueado = user;
-        return View("Presupuesto");
-    }*/
 
 }

@@ -1,152 +1,76 @@
 @{
     ViewBag.Title = "ArmadoPC";
 }
-
-
-
-<form method="post" action='@Url.Action("GuardarPedido")'> 
- 
+<form method="post" action='@Url.Action("Presupuesto")'> 
 @{  
-     @if(ViewBag.Usuario != null){
+@if(ViewBag.Usuario != null){
 <h2>Arma tu pc</h2>
 <input type="hidden" name="IdPedido" value="@ViewBag.IdPedido" />
 <input type="hidden" name="Usuario" value="@ViewBag.Usuario" />
 <h3>CPU:</h3>
-<select name="CPU" value=>
+<select name="CPU" id="CPU">
 <option></option>
-<option name="CPU" id="CPU">@ViewBag.CPU[0].Nombre </option>
-<option name="CPU" id="CPU">@ViewBag.CPU[1].Nombre </option>
-<option name="CPU" id="CPU">@ViewBag.CPU[2].Nombre </option>
-<option name="CPU" id="CPU">@ViewBag.CPU[3].Nombre </option>
-<option name="CPU" id="CPU">@ViewBag.CPU[4].Nombre </option>
+@for(int i= 0; i<=4; i++){
+<option name="CPU" id="CPU">@ViewBag.CPU[i].Nombre </option>}
 </select>
 <br>
-@for(int i = 0; i<=4; i++){
-  <div class="products">
-  <img src=@ViewBag.CPU[i].img  height=250px width=250px>
-  <br>
-  @ViewBag.CPU[i].Nombre
-  </div>
-}
 <h3>Motherboard:</h3>
-<select name="Motherboard">
+<select name="Motherboard" id="Motherboard">
 <option></option>
-<option name="Motherboard" id="Motherboard">@ViewBag.Motherboard[0].Nombre </option>
-<option name="Motherboard" id="Motherboard">@ViewBag.Motherboard[1].Nombre </option>
-<option name="Motherboard" id="Motherboard">@ViewBag.Motherboard[2].Nombre </option>
-<option name="Motherboard" id="Motherboard">@ViewBag.Motherboard[3].Nombre </option>
-<option name="Motherboard" id="Motherboard">@ViewBag.Motherboard[4].Nombre </option>
+@for(int i= 0; i<=4; i++){
+<option name="Motherboard" id="Motherboard">@ViewBag.Motherboard[i].Nombre </option>
+}
 </select>
 <br>
-@for(int i = 0; i<=4; i++){
-  <div class="products">
-  <img src=@ViewBag.Motherboard[i].img  height=250px width=250px>
-  <br>
-  @ViewBag.Motherboard[i].Nombre
-  </div>
-}
 <h3>RAM:</h3>
-<select name="RAM">
+<select name="RAM" id="RAM">
 <option></option>
-<option name="RAM" id="RAM">@ViewBag.RAM[0].Nombre </option>
-<option name="RAM" id="RAM">@ViewBag.RAM[1].Nombre </option>
-<option name="RAM" id="RAM">@ViewBag.RAM[2].Nombre </option>
-<option name="RAM" id="RAM">@ViewBag.RAM[3].Nombre </option>
-<option name="RAM" id="RAM">@ViewBag.RAM[4].Nombre </option>
+@for(int i= 0; i<=4; i++){
+<option name="RAM" id="RAM">@ViewBag.RAM[i].Nombre </option>
+}
 </select>
 <br>
-@for(int i = 0; i<=4; i++){
-  <div class="products">
-  <img src=@ViewBag.RAM[i].img  height=250px width=250px>
-  <br>
-  @ViewBag.RAM[i].Nombre
-  </div>
-}
 <h3>GPU:</h3>
-<select name="GPU">
+<select name="GPU" id="GPU">
 <option></option>
-<option name="GPU" id="GPU">@ViewBag.GPU[0].Nombre </option>
-<option name="GPU" id="GPU">@ViewBag.GPU[1].Nombre </option>
-<option name="GPU" id="GPU">@ViewBag.GPU[2].Nombre </option>
-<option name="GPU" id="GPU">@ViewBag.GPU[3].Nombre </option>
-<option name="GPU" id="GPU">@ViewBag.GPU[4].Nombre </option>
+@for(int i= 0; i<=4; i++){
+<option name="GPU" id="GPU">@ViewBag.GPU[i].Nombre </option>
+}
 </select>
 <br>
-@for(int i = 0; i<=4; i++){
-  <div class="products">
-  <img src=@ViewBag.GPU[i].img  height=250px width=250px>
-  <br>
-  @ViewBag.GPU[i].Nombre
-  </div>
-}
 <h3>Almacenamiento:</h3>
-<select name="Almacenamiento">
+<select name="Almacenamiento" id="Almacenamiento">
 <option></option>
-<option name="Almacenamiento" id="Almacenamiento">@ViewBag.Almacenamiento[0].Nombre </option>
-<option name="Almacenamiento" id="Almacenamiento">@ViewBag.Almacenamiento[1].Nombre </option>
-<option name="Almacenamiento" id="Almacenamiento">@ViewBag.Almacenamiento[2].Nombre </option>
-<option name="Almacenamiento" id="Almacenamiento">@ViewBag.Almacenamiento[3].Nombre </option>
-<option name="Almacenamiento" id="Almacenamiento">@ViewBag.Almacenamiento[4].Nombre </option>
+@for(int i= 0; i<=4; i++){
+<option name="Almacenamiento" id="Almacenamiento">@ViewBag.Almacenamiento[i].Nombre </option>
+}
 </select>
 <br>
-@for(int i = 0; i<=4; i++){
-  <div class="products">
-  <img src=@ViewBag.Almacenamiento[i].img  height=250px width=250px>
-  <br>
-  @ViewBag.Almacenamiento[i].Nombre
-  </div>
-}
 <h3>Cooler:</h3>
-<select name="Cooler">
+<select name="Cooler" id="Cooler">
 <option></option>
-<option name="Cooler" id="Cooler">@ViewBag.Cooler[0].Nombre </option>
-<option name="Cooler" id="Cooler">@ViewBag.Cooler[1].Nombre </option>
-<option name="Cooler" id="Cooler">@ViewBag.Cooler[2].Nombre </option>
-<option name="Cooler" id="Cooler">@ViewBag.Cooler[3].Nombre </option>
-<option name="Cooler" id="Cooler">@ViewBag.Cooler[4].Nombre </option>
+@for(int i= 0; i<=4; i++){
+<option name="Cooler" id="Cooler">@ViewBag.Cooler[i].Nombre </option>
+}
 </select>
 <br>
-@for(int i = 0; i<=4; i++){
-  <div class="products">
-  <img src=@ViewBag.Cooler[i].img  height=250px width=250px>
-  <br>
-  @ViewBag.Cooler[i].Nombre
-  </div>
-}
 <h3>Fuente:</h3>
-<select name="Fuente">
+<select name="Fuente" id="Fuente">
 <option></option>
-<option name="Fuente" id="Fuente">@ViewBag.Fuente[0].Nombre </option>
-<option name="Fuente" id="Fuente">@ViewBag.Fuente[1].Nombre </option>
-<option name="Fuente" id="Fuente">@ViewBag.Fuente[2].Nombre </option>
-<option name="Fuente" id="Fuente">@ViewBag.Fuente[3].Nombre </option>
-<option name="Fuente" id="Fuente">@ViewBag.Fuente[4].Nombre </option>
+@for(int i= 0; i<=4; i++){
+<option name="Fuente" id="Fuente">@ViewBag.Fuente[i].Nombre </option>
+}
 </select>
 <br>
-@for(int i = 0; i<=4; i++){
-  <div class="products">
-  <img src=@ViewBag.Fuente[i].img  height=250px width=250px>
-  <br>
-  @ViewBag.Fuente[i].Nombre
-  </div>
-}
 <h3>Gabinete:</h3>
-<select name="Gabinete">
+<select name="Gabinete" id="Gabinete">
 <option></option>
-<option name="Gabinete" id="Gabinete">@ViewBag.Gabinete[0].Nombre </option>
-<option name="Gabinete" id="Gabinete">@ViewBag.Gabinete[1].Nombre </option>
-<option name="Gabinete" id="Gabinete">@ViewBag.Gabinete[2].Nombre </option>
-<option name="Gabinete" id="Gabinete">@ViewBag.Gabinete[3].Nombre </option>
-<option name="Gabinete" id="Gabinete">@ViewBag.Gabinete[4].Nombre </option>
+@for(int i= 0; i<=4; i++){
+<option name="Gabinete" id="Gabinete">@ViewBag.Gabinete[i].Nombre </option>
+}
 </select>
 <br>
-@for(int i = 0; i<=4; i++){
-  <div class="products">
-  <img src=@ViewBag.Gabinete[i].img  height=250px width=250px>
-  <br>
-  @ViewBag.Gabinete[i].Nombre
-  </div>
-}
+<br>
 <button type="submit">Guardar Pedido</button>
 }else{
   <h2> Todavia no puedes acceder, <a href='InicioSesion'>Haz click aqui para iniciar sesion</a></h2>

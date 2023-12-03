@@ -20,6 +20,24 @@ function ValidarContraseña()
         return false
       }
 }
-function MostrarComponente(){
+function VerDetalle(IdP){
+
+  $.ajax(
+  {
+    type: 'POST',
+    dataType: 'JSON',
+    url: '/Home/DetalleComponente',
+    data: {id : IdP},
+    success:
+      function(response)
+      {
+        $("#Nombre").html(response.nombre);
+        $("#img").attr("src", "/"+response.img);
+        $("#Descripcion").html(response.descripcion);
+        $("#Precio").html("$" + response.precio);
+      }
+  }
   
+)
+
 }
