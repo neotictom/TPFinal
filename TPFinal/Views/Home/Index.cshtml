@@ -18,14 +18,12 @@
 <table class="table">
 <div class="flexFix">
 @{
-  Random rnd = new Random();
   for(int a = 0; a < 5; a++){
-  int r = rnd.Next(1,40);
   <div class="card" >
   <div class="card-body">
-  <img src="@ViewBag.Productos[r].img" class="card-img-top" alt="...">
-  <h5 class="card-title">@ViewBag.Productos[r].Nombre</h5>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="VerDetalle(@ViewBag.Productos[r].IdProducto)">
+  <img src="@ViewBag.Productos[a].img" class="card-img-top" alt="...">
+  <h5 class="card-title">@ViewBag.Productos[a].Nombre</h5>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="VerDetalle(@ViewBag.Productos[a].IdProducto)">
   Mostrar info
 </button>
 </div>
@@ -40,13 +38,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <img id="img">
+        <img class="img-fluid" id="img">
         <div id="Descripcion"></div>
         <div id="Precio"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

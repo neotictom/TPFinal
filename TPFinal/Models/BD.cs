@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 using Dapper;
 
 public class BD{
-    private static string _connectionString = @"Server=DESKTOP-6QK3E9R\SQLEXPRESS01;DataBase=Techbuild;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=localhost;DataBase=Techbuild;Trusted_Connection=True;";
     public static List<Producto> ObtenerProducto(string cat)
     {
         string sql = "select * from Producto Where Categoria = @Categoria";
@@ -12,19 +12,21 @@ public class BD{
             return db.Query<Producto>(sql, new { Categoria = cat }).ToList();
         }
     }
-    public static Producto ObtenerProductoById(int id){
+    public static Producto ObtenerProductoById(int idp){
         Producto prod = new Producto();
-        string sql = "Select * from Producto where IdProducto = @ID";
+        string sql = "SELECT * FROM Producto WHERE IdProducto = @IdProducto";
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            db.QueryFirstOrDefault(sql,new {ID = id});
+            prod = db.QueryFirstOrDefault<Producto>(sql,new {IdProducto = idp});
         }
-        return prod;
+       return prod;
     }
+    
     public static List<Producto> BuscarProductoxnombre(string nom){
-        string sql= "Select * from Producto Where Nombre Like '%@Nombre%'";
+        string sql= "Select * from Producto Where Nombre Like '%' + @Nombre + '%'";
         using(SqlConnection db = new SqlConnection(_connectionString)){
             return db.Query<Producto>(sql,new{Nombre = nom}).ToList();
         }
+       
     }
 
     public Usuario ObtenerUsuario(Usuario u) 

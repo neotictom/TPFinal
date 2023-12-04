@@ -1,7 +1,7 @@
 @{
     ViewBag.Title = "ArmadoPC";
 }
-<form method="post" action='@Url.Action("Presupuesto")'> 
+<form action='@Url.Action("Presupuesto")'> 
 @{  
 @if(ViewBag.Usuario != null){
 <h2>Arma tu pc</h2>
@@ -10,14 +10,14 @@
 <h3>CPU:</h3>
 <select name="CPU" id="CPU">
 <option></option>
-@for(int i= 0; i<=4; i++){
+@for(int i= 0; i<=(ViewBag.CPU.Count - 1); i++){
 <option name="CPU" id="CPU">@ViewBag.CPU[i].Nombre </option>}
 </select>
 <br>
 <h3>Motherboard:</h3>
 <select name="Motherboard" id="Motherboard">
 <option></option>
-@for(int i= 0; i<=4; i++){
+@for(int i= 0; i<=(ViewBag.Motherboard.Count - 1); i++){
 <option name="Motherboard" id="Motherboard">@ViewBag.Motherboard[i].Nombre </option>
 }
 </select>
@@ -25,7 +25,7 @@
 <h3>RAM:</h3>
 <select name="RAM" id="RAM">
 <option></option>
-@for(int i= 0; i<=4; i++){
+@for(int i= 0; i<=(ViewBag.RAM.Count - 1); i++){
 <option name="RAM" id="RAM">@ViewBag.RAM[i].Nombre </option>
 }
 </select>
@@ -33,7 +33,7 @@
 <h3>GPU:</h3>
 <select name="GPU" id="GPU">
 <option></option>
-@for(int i= 0; i<=4; i++){
+@for(int i= 0; i<=(ViewBag.GPU.Count - 1); i++){
 <option name="GPU" id="GPU">@ViewBag.GPU[i].Nombre </option>
 }
 </select>
@@ -41,7 +41,7 @@
 <h3>Almacenamiento:</h3>
 <select name="Almacenamiento" id="Almacenamiento">
 <option></option>
-@for(int i= 0; i<=4; i++){
+@for(int i= 0; i<=(ViewBag.Almacenamiento.Count - 1); i++){
 <option name="Almacenamiento" id="Almacenamiento">@ViewBag.Almacenamiento[i].Nombre </option>
 }
 </select>
@@ -49,7 +49,7 @@
 <h3>Cooler:</h3>
 <select name="Cooler" id="Cooler">
 <option></option>
-@for(int i= 0; i<=4; i++){
+@for(int i= 0; i<=(ViewBag.Cooler.Count - 1); i++){
 <option name="Cooler" id="Cooler">@ViewBag.Cooler[i].Nombre </option>
 }
 </select>
@@ -57,7 +57,7 @@
 <h3>Fuente:</h3>
 <select name="Fuente" id="Fuente">
 <option></option>
-@for(int i= 0; i<=4; i++){
+@for(int i= 0; i<=(ViewBag.Fuente.Count - 1); i++){
 <option name="Fuente" id="Fuente">@ViewBag.Fuente[i].Nombre </option>
 }
 </select>
@@ -65,7 +65,7 @@
 <h3>Gabinete:</h3>
 <select name="Gabinete" id="Gabinete">
 <option></option>
-@for(int i= 0; i<=4; i++){
+@for(int i= 0; i<=(ViewBag.Gabinete.Count - 1); i++){
 <option name="Gabinete" id="Gabinete">@ViewBag.Gabinete[i].Nombre </option>
 }
 </select>

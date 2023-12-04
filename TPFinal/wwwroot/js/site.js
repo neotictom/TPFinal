@@ -21,18 +21,19 @@ function ValidarContraseña()
       }
 }
 function VerDetalle(IdP){
-
+  console.log(IdP)
   $.ajax(
-  {
+  { 
     type: 'POST',
     dataType: 'JSON',
-    url: '/Home/DetalleComponente',
-    data: {id : IdP},
+    url: '/Home/ModalComp',
+    data: {id: IdP},
     success:
       function(response)
       {
+        console.log(response);
         $("#Nombre").html(response.nombre);
-        $("#img").attr("src", "/"+response.img);
+        $("#img").attr("src", response.img);
         $("#Descripcion").html(response.descripcion);
         $("#Precio").html("$" + response.precio);
       }
