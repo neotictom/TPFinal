@@ -1,5 +1,5 @@
 @{
-    ViewBag.Title = "ArmadoPC";
+    ViewData["Title"] = "ArmadoPC";
 }
 <form action='@Url.Action("Presupuesto")'> 
 @{  
@@ -11,14 +11,15 @@
 <select name="CPU" id="CPU">
 <option></option>
 @for(int i= 0; i<=(ViewBag.CPU.Count - 1); i++){
-<option name="CPU" id="CPU">@ViewBag.CPU[i].Nombre </option>}
+<option name="CPU" id="CPU" value=@ViewBag.CPU[i].IdProducto>@ViewBag.CPU[i].Nombre </option>}
 </select>
+
 <br>
 <h3>Motherboard:</h3>
 <select name="Motherboard" id="Motherboard">
 <option></option>
 @for(int i= 0; i<=(ViewBag.Motherboard.Count - 1); i++){
-<option name="Motherboard" id="Motherboard">@ViewBag.Motherboard[i].Nombre </option>
+<option name="Motherboard" id="Motherboard" value=@ViewBag.Motherboard[i].IdProducto>@ViewBag.Motherboard[i].Nombre </option>
 }
 </select>
 <br>
@@ -26,7 +27,7 @@
 <select name="RAM" id="RAM">
 <option></option>
 @for(int i= 0; i<=(ViewBag.RAM.Count - 1); i++){
-<option name="RAM" id="RAM">@ViewBag.RAM[i].Nombre </option>
+<option name="RAM" id="RAM" value=@ViewBag.RAM[i].IdProducto>@ViewBag.RAM[i].Nombre </option>
 }
 </select>
 <br>
@@ -34,7 +35,7 @@
 <select name="GPU" id="GPU">
 <option></option>
 @for(int i= 0; i<=(ViewBag.GPU.Count - 1); i++){
-<option name="GPU" id="GPU">@ViewBag.GPU[i].Nombre </option>
+<option name="GPU" id="GPU" value=@ViewBag.GPU[i].IdProducto>@ViewBag.GPU[i].Nombre </option>
 }
 </select>
 <br>
@@ -42,7 +43,7 @@
 <select name="Almacenamiento" id="Almacenamiento">
 <option></option>
 @for(int i= 0; i<=(ViewBag.Almacenamiento.Count - 1); i++){
-<option name="Almacenamiento" id="Almacenamiento">@ViewBag.Almacenamiento[i].Nombre </option>
+<option name="Almacenamiento" id="Almacenamiento" value=@ViewBag.Almacenamiento[i].IdProducto>@ViewBag.Almacenamiento[i].Nombre </option>
 }
 </select>
 <br>
@@ -50,7 +51,7 @@
 <select name="Cooler" id="Cooler">
 <option></option>
 @for(int i= 0; i<=(ViewBag.Cooler.Count - 1); i++){
-<option name="Cooler" id="Cooler">@ViewBag.Cooler[i].Nombre </option>
+<option name="Cooler" id="Cooler" value=@ViewBag.Cooler[i].IdProducto>@ViewBag.Cooler[i].Nombre </option>
 }
 </select>
 <br>
@@ -58,7 +59,7 @@
 <select name="Fuente" id="Fuente">
 <option></option>
 @for(int i= 0; i<=(ViewBag.Fuente.Count - 1); i++){
-<option name="Fuente" id="Fuente">@ViewBag.Fuente[i].Nombre </option>
+<option name="Fuente" id="Fuente" value=@ViewBag.Fuente[i].IdProducto>@ViewBag.Fuente[i].Nombre </option>
 }
 </select>
 <br>
@@ -66,7 +67,7 @@
 <select name="Gabinete" id="Gabinete">
 <option></option>
 @for(int i= 0; i<=(ViewBag.Gabinete.Count - 1); i++){
-<option name="Gabinete" id="Gabinete">@ViewBag.Gabinete[i].Nombre </option>
+<option name="Gabinete" id="Gabinete" value=@ViewBag.Gabinete[i].IdProducto>@ViewBag.Gabinete[i].Nombre </option>
 }
 </select>
 <br>

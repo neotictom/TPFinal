@@ -3,13 +3,21 @@ using System.Data.SqlClient;
 using Dapper;
 
 public class BD{
-    private static string _connectionString = @"Server=DESKTOP-6QK3E9R\SQLEXPRESS01;DataBase=Techbuild;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=localhost;DataBase=Techbuild;Trusted_Connection=True;";
     public static List<Producto> ObtenerProducto(string cat)
     {
         string sql = "select * from Producto Where Categoria = @Categoria";
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             return db.Query<Producto>(sql, new { Categoria = cat }).ToList();
+        }
+    }
+    public static List<Producto> ObtenerTodosLosProducto()
+    {
+        string sql = "select * from Producto";
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            return db.Query<Producto>(sql).ToList();
         }
     }
     public static Producto ObtenerProductoById(int idp){
@@ -40,22 +48,22 @@ public class BD{
         }
         return user;
     }
-    public static void AgregarPedido(Pedido p){
+    public static void AgregarPedido(int idMotherboard,int idCPU,int idGPU,int idRAM,int idAlmacenamiento,int idCooler,int idGabinete,int idFuente,Usuario user,double tot){
         string sql = "INSERT INTO Pedido (Motherboard,CPU,RAM,GPU,Almacenamiento,Cooler,Fuente,Gabinete,IdUsuario,Total)" + 
                  "VALUES (@Motherboard,@CPU,@RAM,@GPU,@Almacenamiento,@Cooler,@Fuente,@Gabinete,@IdUsuario,@Total);";
         using (SqlConnection conexion = new SqlConnection(_connectionString))
         {
             conexion.Execute(sql, new{
-                Motherboard = p.Motherboard,
-                CPU = p.CPU,
-                RAM = p.RAM,
-                GPU = p.GPU,
-                Almacenamiento = p.Almacenamiento,
-                Cooler = p.Cooler,
-                Fuente = p.Fuente,
-                Gabinete = p.Gabinete,
-                IdUsuario = p.IdUsuario,
-                Total = p.Total
+                Motherboard = idMotherboard,
+                CPU = idCPU,
+                RAM = idRAM,
+                GPU = idGPU,
+                Almacenamiento = idAlmacenamiento,
+                Cooler = idCooler,
+                Fuente = idFuente,
+                Gabinete = idGabinete,
+                IdUsuario = user.IdUsuario,
+                Total = tot
             });
         }
     }

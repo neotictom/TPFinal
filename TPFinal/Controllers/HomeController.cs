@@ -18,7 +18,7 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-
+    
     public IActionResult Index()
     {
         
@@ -35,6 +35,9 @@ public class HomeController : Controller
         return View();
     }
     public Producto ModalComp(int id){
+        return BD.ObtenerProductoById(id);
+    }
+    public Producto ObtenerImg(int id){
         return BD.ObtenerProductoById(id);
     }
     public IActionResult Armadopc(Pedido p){
@@ -86,94 +89,34 @@ public class HomeController : Controller
         
         return View("Registrarse");
     }
-    public IActionResult Presupuesto(string CPU,string Motherboard,string RAM,string GPU,string Almacenamiento,string Cooler,string Gabinete,string Fuente){
-        List <Producto> CPUC = BD.ObtenerProducto("CPU");
-        List <Producto> MotherboardC = BD.ObtenerProducto("Motherboard");
-        List <Producto> GPUC = BD.ObtenerProducto("GPU");
-        List <Producto> RAMC = BD.ObtenerProducto("RAM");
-        List <Producto> AlmacenamientoC = BD.ObtenerProducto("Almacenamiento");
-        List <Producto> CoolerC = BD.ObtenerProducto("Cooler");
-        List <Producto> GabineteC = BD.ObtenerProducto("Gabinete");
-        List <Producto> FuenteC = BD.ObtenerProducto("Fuente"); 
-        int idCPU = -1;
-        int idMotherboard = -1;
-        int idGPU = -1;
-        int idRAM = -1;
-        int idAlmacenamiento = -1;
-        int idCooler = -1;
-        int idGabinete = -1;
-        int idFuente = -1;
+    public IActionResult Presupuesto(int CPU,int Motherboard,int RAM,int GPU,int Almacenamiento,int Cooler,int Gabinete,int Fuente){
+        List <Producto> Productos = BD.ObtenerTodosLosProducto();
 
-        for(int i = 0; i<=(CPUC.Count - 1) || idCPU != -1;i++)
-        {
-            if(CPU == CPUC[i].Nombre)
-            {
-                idCPU = CPUC[i].IdProducto;
-            }
-        }
+        Console.WriteLine(CPU);
+        Console.WriteLine(Motherboard);
+        Console.WriteLine(RAM);
+        Console.WriteLine(GPU);
+        Console.WriteLine(Almacenamiento);
+        Console.WriteLine(Cooler);
+        Console.WriteLine(Gabinete);
+        Console.WriteLine(Fuente);
 
-        for(int i = 0; i<=(MotherboardC.Count - 1) || idMotherboard != -1;i++)
-        {
-            if(Motherboard == MotherboardC[i].Nombre)
-            {
-                idMotherboard = MotherboardC[i].IdProducto;
-            }
-        }
+        double tot = 0;
 
-        for(int i = 0; i<=(GPUC.Count - 1) || idGPU != -1;i++)
-        {
-            if(GPU == GPUC[i].Nombre)
-            {
-                idGPU = GPUC[i].IdProducto;
-            }
-        }
-
-        for(int i = 0; i<=(RAMC.Count - 1) || idRAM != -1;i++)
-        {
-            if(RAM == RAMC[i].Nombre)
-            {
-                idRAM = RAMC[i].IdProducto;
-            }
-        }
-
-        for(int i = 0; i<=(AlmacenamientoC.Count - 1) || idAlmacenamiento != -1;i++)
-        {
-            if(Almacenamiento == AlmacenamientoC[i].Nombre)
-            {
-                idAlmacenamiento = AlmacenamientoC[i].IdProducto;
-            }
-        }
-
-        for(int i = 0; i<=(CoolerC.Count - 1) || idCooler != -1;i++)
-        {
-            if(Cooler == CoolerC[i].Nombre)
-            {
-                idCooler = CoolerC[i].IdProducto;
-            }
-        }
-
-        for(int i = 0; i<=(GabineteC.Count - 1) || idGabinete != -1;i++)
-        {
-            if(Gabinete == GabineteC[i].Nombre)
-            {
-                idGabinete = GabineteC[i].IdProducto;
-            }
-        }
-
-        for(int i = 0; i<=(FuenteC.Count - 1) || idFuente != -1;i++)
-        {
-            if(Fuente == FuenteC[i].Nombre)
-            {
-                idFuente = FuenteC[i].IdProducto;
-            }
-        }
-
-        double tot = (MotherboardC[idMotherboard].Precio + CPUC[idCPU].Precio + GPUC[idGPU].Precio + RAMC[idRAM].Precio + AlmacenamientoC[idAlmacenamiento].Precio + CoolerC[idCooler].Precio + GabineteC[idGabinete].Precio + FuenteC[idFuente].Precio);
-        //Pedido p = {0,idMotherboard,idCPU,idRAM,idGPU,idAlmacenamiento,idCooler,idFuente,idGabinete,user.IdUsuario,tot};
+        tot = (CPU!=0) ? tot+=Productos[CPU].Precio :  tot;
+        tot = (Motherboard!=0) ? tot+=Productos[Motherboard].Precio :  tot;
+        tot = (RAM!=0) ? tot+=Productos[RAM].Precio :  tot;
+        tot = (GPU!=0) ? tot+=Productos[GPU].Precio :  tot;
+        tot = (Almacenamiento!=0) ? tot+=Productos[Almacenamiento].Precio :  tot;
+        tot = (Cooler!=0) ? tot+=Productos[Cooler].Precio :  tot;
+        tot = (Gabinete!=0) ? tot+=Productos[Gabinete].Precio :  tot;
+        tot = (Fuente!=0) ? tot+=Productos[Fuente].Precio :  tot;
+        //double tot = (MotherboardC[Motherboard - 1].Precio + CPUC[CPU - 1].Precio + GPUC[GPU - 1].Precio + RAMC[RAM].Precio + AlmacenamientoC[Almacenamiento].Precio + CoolerC[Cooler].Precio + GabineteC[Gabinete].Precio + FuenteC[Fuente].Precio);
+        //Pedido p = {0,idMotherboard,idCPU,idRAM,idGPU,idAlmacenamiento,idCooler,idFuente,idGabinete,user. ,tot};
 
         ViewBag.UsuarioLogueado = user;
 
-        //BD.AgregarPedido(p);
+        BD.AgregarPedido(Motherboard,CPU,GPU,RAM,Almacenamiento,Cooler,Gabinete,Fuente,user,tot);
         return View("Presupuesto");
     }
     public IActionResult UsuRegistrar(Usuario usu)
@@ -183,6 +126,7 @@ public class HomeController : Controller
     }
     public IActionResult BuscarProducto(string nom){
         ViewBag.Prod = BD.BuscarProductoxnombre(nom);
+        ViewBag.Busc = nom;
         return View("BuscarProducto");
     }
 

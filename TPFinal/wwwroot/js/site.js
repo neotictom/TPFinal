@@ -36,22 +36,9 @@ function VerDetalle(IdP){
         $("#img").attr("src", response.img);
         $("#Descripcion").html(response.descripcion);
         $("#Precio").html("$" + response.precio);
+        $("#Consumo").html(response.consumo + "W De consumo")
       }
   }
   
 )
-
-}
-function Busqueda(nom){
-  $.ajax({
-    type: 'POST',
-    dataTypE: 'JSON',
-    url: '/Home/BuscarProducto',
-    data: {name: nom},
-    success:
-      function(response){
-        $("#Nombre").html(response.nombre);
-        $("#img").attr("src", response.img);
-      }
-  })
 }
