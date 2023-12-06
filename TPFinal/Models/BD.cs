@@ -12,7 +12,7 @@ public class BD{
             return db.Query<Producto>(sql, new { Categoria = cat }).ToList();
         }
     }
-    public static List<Producto> ObtenerTodosLosProducto()
+    public static List<Producto> ObtenerTodosLosProductos()
     {
         string sql = "select * from Producto";
         using(SqlConnection db = new SqlConnection(_connectionString))
@@ -27,6 +27,14 @@ public class BD{
             prod = db.QueryFirstOrDefault<Producto>(sql,new {IdProducto = idp});
         }
        return prod;
+    }
+    public static Pedido ObtenerPedidoById(int idp){
+        Pedido order = new Pedido();
+        string sql = "SELECT * FROM Pedido WHERE IdPedido = @IdPedido";
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            order = db.QueryFirstOrDefault<Pedido>(sql,new {IdPedido = idp});
+        }
+       return order;
     }
     
     public static List<Producto> BuscarProductoxnombre(string nom){
@@ -67,6 +75,29 @@ public class BD{
             });
         }
     }
+
+    public static Pedido BuscarPedidoInsertado(int idMotherboard,int idCPU,int idGPU,int idRAM,int idAlmacenamiento,int idCooler,int idGabinete,int idFuente,Usuario user,double tot)
+    {
+        Pedido ped = new Pedido();
+        string sql = "Select * From Pedido Where Motherboard = @Motherboard And CPU = @CPU And RAM = @RAM And GPU = @GPU And Almacenamiento = @Almacenamiento And Cooler = @Cooler And Fuente = @Fuente And Gabinete = @Gabinete And IdUsuario = @IdUsuario And Total = @Total";
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            ped = db.QueryFirstOrDefault<Pedido>(sql, new{
+                Motherboard = idMotherboard,
+                CPU = idCPU,
+                RAM = idRAM,
+                GPU = idGPU,
+                Almacenamiento = idAlmacenamiento,
+                Cooler = idCooler,
+                Fuente = idFuente,
+                Gabinete = idGabinete,
+                IdUsuario = user.IdUsuario,
+                Total = tot
+            });
+        }
+        return ped;
+    }
+    
     public static void RegistrarUsuario(Usuario u) 
     {
         string sql = "INSERT INTO Usuario (Nombre, Apellido, Username, Password, Email, Telefono, Direccion, FotoDePerfil)" + 

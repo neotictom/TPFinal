@@ -5,11 +5,11 @@
 function ValidarContraseña()
 {
     //Id : Contraseña
-    let Pass= document.getElementById("Contraseña")
-
+    let Pass= document.getElementById("Contra")
+    console.log(Pass.value)
     let reg = /^(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}$/
     
-    if (reg.test(Pass)) 
+    if (reg.test(Pass.value)) 
       {
         alert("La contraseña es válida.")
         return true

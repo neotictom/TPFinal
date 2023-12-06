@@ -50,7 +50,6 @@ C:\Users\47496739\Downloads\TPFinal\TPFinal\bin\Debug\net6.0\appsettings.Develop
 C:\Users\47496739\Downloads\TPFinal\TPFinal\bin\Debug\net6.0\appsettings.json
 C:\Users\47496739\Downloads\TPFinal\TPFinal\bin\Debug\net6.0\package-lock.json
 C:\Users\47496739\Downloads\TPFinal\TPFinal\bin\Debug\net6.0\package.json
-C:\Users\47496739\Downloads\TPFinal\TPFinal\bin\Debug\net6.0\productos.json
 C:\Users\47496739\Downloads\TPFinal\TPFinal\bin\Debug\net6.0\TPFinal.staticwebassets.runtime.json
 C:\Users\47496739\Downloads\TPFinal\TPFinal\bin\Debug\net6.0\TPFinal.exe
 C:\Users\47496739\Downloads\TPFinal\TPFinal\bin\Debug\net6.0\TPFinal.deps.json

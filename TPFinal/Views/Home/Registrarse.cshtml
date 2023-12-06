@@ -1,7 +1,7 @@
 @{
     ViewData["Title"] = "Register";
 }
-<form action='@Url.Action("UsuRegistrar")'>
+<form action='@Url.Action("UsuRegistrar")' onsubmit="return ValidarContraseña()">
 <div class="mt-5">
     <label for="inputPassword6" class="col-form-label">Nombre</label>
   <div class="col-auto">

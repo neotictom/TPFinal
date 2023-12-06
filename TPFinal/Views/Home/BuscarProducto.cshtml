@@ -3,13 +3,12 @@
 }
 <link rel="stylesheet" href="~/css/site.css">
 <h1>Debido a que buscaste "@ViewBag.Busc":</h1>
-<table class="table">
 
 @for(int i = 0; i<@ViewBag.Prod.Count; i++){
-<div class="container text-center">
+<div class="container-sm text-center">
 <div class="d-flex align-content-start flex-wrap">
   <div class="row align-items-start">
-    <div class="col">
+    <div class="col" >
       <img src="@ViewBag.Prod[i].img" class=" img-fluid" alt="..." height="250px" width=250px >
       <h5 class="card-title">@ViewBag.Prod[i].Nombre</h5>
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="VerDetalle(@ViewBag.Prod[i].IdProducto)">Mostrar info</button>
@@ -20,7 +19,7 @@
 }
 
 
-</table>
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

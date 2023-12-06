@@ -32,6 +32,8 @@ public class HomeController : Controller
         }
         ViewBag.Productos = prand; 
         ViewBag.UsuarioLogueado = user;
+        ViewBag.ElPedido = order;
+        ViewBag.Prods = BD.ObtenerTodosLosProductos();   
         return View();
     }
     public Producto ModalComp(int id){
@@ -90,7 +92,7 @@ public class HomeController : Controller
         return View("Registrarse");
     }
     public IActionResult Presupuesto(int CPU,int Motherboard,int RAM,int GPU,int Almacenamiento,int Cooler,int Gabinete,int Fuente){
-        List <Producto> Productos = BD.ObtenerTodosLosProducto();
+        List <Producto> Productos = BD.ObtenerTodosLosProductos();
 
         Console.WriteLine(CPU);
         Console.WriteLine(Motherboard);
@@ -111,12 +113,16 @@ public class HomeController : Controller
         tot = (Cooler!=0) ? tot+=Productos[Cooler].Precio :  tot;
         tot = (Gabinete!=0) ? tot+=Productos[Gabinete].Precio :  tot;
         tot = (Fuente!=0) ? tot+=Productos[Fuente].Precio :  tot;
+        
         //double tot = (MotherboardC[Motherboard - 1].Precio + CPUC[CPU - 1].Precio + GPUC[GPU - 1].Precio + RAMC[RAM].Precio + AlmacenamientoC[Almacenamiento].Precio + CoolerC[Cooler].Precio + GabineteC[Gabinete].Precio + FuenteC[Fuente].Precio);
         //Pedido p = {0,idMotherboard,idCPU,idRAM,idGPU,idAlmacenamiento,idCooler,idFuente,idGabinete,user. ,tot};
 
         ViewBag.UsuarioLogueado = user;
 
         BD.AgregarPedido(Motherboard,CPU,GPU,RAM,Almacenamiento,Cooler,Gabinete,Fuente,user,tot);
+        order = BD.BuscarPedidoInsertado(Motherboard,CPU,GPU,RAM,Almacenamiento,Cooler,Gabinete,Fuente,user,tot);
+        ViewBag.ElPedido = order;
+        ViewBag.Productos = BD.ObtenerTodosLosProductos();   
         return View("Presupuesto");
     }
     public IActionResult UsuRegistrar(Usuario usu)
@@ -133,6 +139,12 @@ public class HomeController : Controller
     public IActionResult ContraseñaOlvidada()
     {
         return View("ContraseñaOlvidada");
+    }
+    
+    public IActionResult CambiarContraseña(string Username,string Email,string Contraseña,string ContraseñaConfirmada)
+    {
+        
+        return View("InicioSesion");
     }
     
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

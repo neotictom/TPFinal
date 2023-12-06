@@ -1,32 +1,71 @@
 @{
     ViewData["Title"] = "Presupuesto";
 }
-<table class="table tabble-striped">
+<h1>Pedido de: @ViewBag.UsuarioLogueado.Nombre</h1>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">Comp</th>
       <th scope="col">Nombre</th>
-      <th scope="col">Tipo</th>
       <th scope="col">Precio</th>
+      
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td>Otto</td>
-      <td></td>
+  <tr>
+      <th scope="row">Motherboard</th>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.Motherboard].Nombre</td>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.Motherboard].Precio</td>
+      
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td></td>
+      <th scope="row">CPU</th>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.CPU].Nombre</td>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.CPU].Precio</td>
+      
+    </tr>
+    
+    <tr>
+      <th scope="row">RAM</th>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.RAM].Nombre</td>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.RAM].Precio</td>
+      
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
+      <th scope="row">GPU</th>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.GPU].Nombre</td>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.GPU].Precio</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Almacenamiento</th>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.Almacenamiento].Nombre</td>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.Almacenamiento].Precio</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Cooler</th>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.Cooler].Nombre</td>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.Cooler].Precio</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Fuente</th>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.Fuente].Nombre</td>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.Fuente].Precio</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Gabinete</th>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.Gabinete].Nombre</td>
+      <td>@ViewBag.Productos[ViewBag.ElPedido.Gabinete].Precio</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Total:</th>
       <td></td>
+      <td>@ViewBag.ElPedido.Total</td>
+      
     </tr>
   </tbody>
 </table>
