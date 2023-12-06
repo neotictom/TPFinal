@@ -3,20 +3,33 @@
 }
 <link rel="stylesheet" href="~/css/site.css">
 <h1>Debido a que buscaste "@ViewBag.Busc":</h1>
-
-@for(int i = 0; i<@ViewBag.Prod.Count; i++){
 <div class="container-sm text-center">
-<div class="d-flex align-content-start flex-wrap">
-  <div class="row align-items-start">
-    <div class="col" >
-      <img src="@ViewBag.Prod[i].img" class=" img-fluid" alt="..." height="250px" width=250px >
-      <h5 class="card-title">@ViewBag.Prod[i].Nombre</h5>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="VerDetalle(@ViewBag.Prod[i].IdProducto)">Mostrar info</button>
-    </div>
-    </div>
-  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (int i = 0; i < ViewBag.Prod.Count; i++)
+      {
+        <tr>
+          <td>
+            <img src="@ViewBag.Prod[i].img" class="img-fluid" alt="..." height="150px" width="150px">
+          </td>
+          <td>@ViewBag.Prod[i].Nombre</td>
+          <td>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="VerDetalle(@ViewBag.Prod[i].IdProducto)">Mostrar info</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
 </div>
-}
+
+
 
 
 

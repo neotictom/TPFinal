@@ -13,7 +13,16 @@
 @for(int i= 0; i<=(ViewBag.CPU.Count - 1); i++){
 <option name="CPU" id="CPU" value=@ViewBag.CPU[i].IdProducto>@ViewBag.CPU[i].Nombre </option>}
 </select>
-
+<br>
+@for(int i = 0; i<=4; i++){
+  <div class="products">
+  <img src=@ViewBag.CPU[i].img  height=250px width=250px>
+  <br>
+  @ViewBag.CPU[i].Nombre
+  </div>
+}
+<br>
+<br>
 <br>
 <h3>Motherboard:</h3>
 <select name="Motherboard" id="Motherboard">
@@ -23,6 +32,16 @@
 }
 </select>
 <br>
+@for(int i = 0; i<=4; i++){
+  <div class="products">
+  <img src=@ViewBag.Motherboard[i].img  height=250px width=250px>
+  <br>
+  @ViewBag.Motherboard[i].Nombre
+  </div>
+}
+<br>
+<br>
+<br>
 <h3>RAM:</h3>
 <select name="RAM" id="RAM">
 <option></option>
@@ -30,6 +49,17 @@
 <option name="RAM" id="RAM" value=@ViewBag.RAM[i].IdProducto>@ViewBag.RAM[i].Nombre </option>
 }
 </select>
+<br>
+
+@for(int i = 0; i<=4; i++){
+  <div class="products">
+  <img src=@ViewBag.RAM[i].img  height=250px width=250px>
+  <br>
+  @ViewBag.RAM[i].Nombre
+  </div>
+}
+<br>
+<br>
 <br>
 <h3>GPU:</h3>
 <select name="GPU" id="GPU">
@@ -39,6 +69,16 @@
 }
 </select>
 <br>
+@for(int i = 0; i<=4; i++){
+  <div class="products">
+  <img src=@ViewBag.GPU[i].img  height=250px width=248px>
+  <br>
+  @ViewBag.GPU[i].Nombre
+  </div>
+}
+<br>
+<br>
+<br>
 <h3>Almacenamiento:</h3>
 <select name="Almacenamiento" id="Almacenamiento">
 <option></option>
@@ -46,6 +86,16 @@
 <option name="Almacenamiento" id="Almacenamiento" value=@ViewBag.Almacenamiento[i].IdProducto>@ViewBag.Almacenamiento[i].Nombre </option>
 }
 </select>
+<br>
+@for(int i = 0; i<=4; i++){
+  <div class="products">
+  <img src=@ViewBag.Almacenamiento[i].img  height=250px width=250px>
+  <br>
+  @ViewBag.Almacenamiento[i].Nombre
+  </div>
+}
+<br>
+<br>
 <br>
 <h3>Cooler:</h3>
 <select name="Cooler" id="Cooler">
@@ -55,6 +105,16 @@
 }
 </select>
 <br>
+@for(int i = 0; i<=4; i++){
+  <div class="products">
+  <img src=@ViewBag.Cooler[i].img  height=250px width=250px>
+  <br>
+  @ViewBag.Cooler[i].Nombre
+  </div>
+}
+<br>
+<br>
+<br>
 <h3>Fuente:</h3>
 <select name="Fuente" id="Fuente">
 <option></option>
@@ -63,6 +123,16 @@
 }
 </select>
 <br>
+@for(int i = 0; i<=4; i++){
+  <div class="products">
+  <img src=@ViewBag.Fuente[i].img  height=250px width=250px>
+  <br>
+  @ViewBag.Fuente[i].Nombre
+  </div>
+}
+<br>
+<br>
+<br>
 <h3>Gabinete:</h3>
 <select name="Gabinete" id="Gabinete">
 <option></option>
@@ -70,6 +140,14 @@
 <option name="Gabinete" id="Gabinete" value=@ViewBag.Gabinete[i].IdProducto>@ViewBag.Gabinete[i].Nombre </option>
 }
 </select>
+<br>
+@for(int i = 0; i<=4; i++){
+  <div class="products">
+  <img src=@ViewBag.Gabinete[i].img  height=250px width=250px>
+  <br>
+  @ViewBag.Gabinete[i].Nombre
+  </div>
+}
 <br>
 <br>
 <button type="submit">Guardar Pedido</button>

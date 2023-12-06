@@ -33,7 +33,8 @@ public class HomeController : Controller
         ViewBag.Productos = prand; 
         ViewBag.UsuarioLogueado = user;
         ViewBag.ElPedido = order;
-        ViewBag.Prods = BD.ObtenerTodosLosProductos();   
+        ViewBag.Prods = BD.ListarProductos();   
+        Console.WriteLine(ViewBag.Prods);
         return View();
     }
     public Producto ModalComp(int id){
@@ -92,7 +93,7 @@ public class HomeController : Controller
         return View("Registrarse");
     }
     public IActionResult Presupuesto(int CPU,int Motherboard,int RAM,int GPU,int Almacenamiento,int Cooler,int Gabinete,int Fuente){
-        List <Producto> Productos = BD.ObtenerTodosLosProductos();
+        List <Producto> Productos = BD.ListarProductos();
 
         Console.WriteLine(CPU);
         Console.WriteLine(Motherboard);
@@ -122,7 +123,7 @@ public class HomeController : Controller
         BD.AgregarPedido(Motherboard,CPU,GPU,RAM,Almacenamiento,Cooler,Gabinete,Fuente,user,tot);
         order = BD.BuscarPedidoInsertado(Motherboard,CPU,GPU,RAM,Almacenamiento,Cooler,Gabinete,Fuente,user,tot);
         ViewBag.ElPedido = order;
-        ViewBag.Productos = BD.ObtenerTodosLosProductos();   
+        ViewBag.Prod = BD.ListarProductos();   
         return View("Presupuesto");
     }
     public IActionResult UsuRegistrar(Usuario usu)
