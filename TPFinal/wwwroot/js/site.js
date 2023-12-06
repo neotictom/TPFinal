@@ -24,7 +24,7 @@ function VerDetalle(IdP){
   console.log(IdP)
   $.ajax(
   { 
-    type: 'POST',
+    type: 'GET',
     dataType: 'JSON',
     url: '/Home/ModalComp',
     data: {id: IdP},
@@ -41,4 +41,17 @@ function VerDetalle(IdP){
   
 )
 
+}
+function Busqueda(nom){
+  $.ajax({
+    type: 'POST',
+    dataTypE: 'JSON',
+    url: '/Home/BuscarProducto',
+    data: {name: nom},
+    success:
+      function(response){
+        $("#Nombre").html(response.nombre);
+        $("#img").attr("src", response.img);
+      }
+  })
 }

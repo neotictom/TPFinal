@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 using Dapper;
 
 public class BD{
-    private static string _connectionString = @"Server=localhost;DataBase=Techbuild;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=DESKTOP-6QK3E9R\SQLEXPRESS01;DataBase=Techbuild;Trusted_Connection=True;";
     public static List<Producto> ObtenerProducto(string cat)
     {
         string sql = "select * from Producto Where Categoria = @Categoria";

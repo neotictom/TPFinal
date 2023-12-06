@@ -1,7 +1,8 @@
 @{
     ViewData["Title"] = "Producto";
 }
-@for(int i = 0; i<=@ViewBag.Prod.Count - 1; i++){
+<link rel="stylesheet" href="~/css/site.css">
+@for(int i = 0; i<@ViewBag.Prod.Count; i++){
     <div class="card" >
   <div class="card-body">
   <img src="@ViewBag.Prod[i].img" class="card-img-top" alt="...">

@@ -10,6 +10,7 @@ public class HomeController : Controller
 {
 
     static Usuario user = null;
+    static Pedido order = null;
     
     private readonly ILogger<HomeController> _logger;
 
