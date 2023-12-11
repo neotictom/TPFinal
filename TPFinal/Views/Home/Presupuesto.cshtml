@@ -12,55 +12,71 @@
     </tr>
   </thead>
   <tbody>
-  <tr>
+  @if(ViewBag.ElPedido.Motherboard > 0)
+  {
+    <tr>
       <th scope="row">Motherboard</th>
       <td>@ViewBag.Prod[ViewBag.ElPedido.Motherboard-1].Nombre</td>
       <td>@ViewBag.Prod[ViewBag.ElPedido.Motherboard-1].Precio</td>
       
     </tr>
+    }
+    @if(ViewBag.ElPedido.CPU > 0)
+    {
     <tr>
       <th scope="row">CPU</th>
       <td>@ViewBag.Prod[ViewBag.ElPedido.CPU-1].Nombre</td>
       <td>@ViewBag.Prod[ViewBag.ElPedido.CPU-1].Precio</td>
-      
     </tr>
-    
+    }
+    @if(ViewBag.ElPedido.RAM > 0)
+    {
     <tr>
       <th scope="row">RAM</th>
       <td>@ViewBag.Prod[ViewBag.ElPedido.RAM-1].Nombre</td>
       <td>@ViewBag.Prod[ViewBag.ElPedido.RAM-1].Precio</td>
-      
     </tr>
+    }
+    @if(ViewBag.ElPedido.GPU > 0)
+    {
     <tr>
       <th scope="row">GPU</th>
       <td>@ViewBag.Prod[ViewBag.ElPedido.GPU-1].Nombre</td>
       <td>@ViewBag.Prod[ViewBag.ElPedido.GPU-1].Precio</td>
-      
     </tr>
+    }
+    @if(ViewBag.ElPedido.Almacenamiento > 0)
+    {
     <tr>
       <th scope="row">Almacenamiento</th>
       <td>@ViewBag.Prod[ViewBag.ElPedido.Almacenamiento-1].Nombre</td>
       <td>@ViewBag.Prod[ViewBag.ElPedido.Almacenamiento-1].Precio</td>
-      
     </tr>
+    }
+    @if(ViewBag.ElPedido.Cooler > 0)
+    {
     <tr>
       <th scope="row">Cooler</th>
       <td>@ViewBag.Prod[ViewBag.ElPedido.Cooler-1].Nombre</td>
       <td>@ViewBag.Prod[ViewBag.ElPedido.Cooler-1].Precio</td>
-      
     </tr>
+    }
+    @if(ViewBag.ElPedido.Fuente > 0)
+    {
     <tr>
       <th scope="row">Fuente</th>
       <td>@ViewBag.Prod[ViewBag.ElPedido.Fuente-1].Nombre</td>
       <td>@ViewBag.Prod[ViewBag.ElPedido.Fuente-1].Precio</td>
-      
     </tr>
+    }
+    @if(ViewBag.ElPedido.Gabinete > 0)
+    {
     <tr>
       <th scope="row">Gabinete</th>
       <td>@ViewBag.Prod[ViewBag.ElPedido.Gabinete-1].Nombre</td>
       <td>@ViewBag.Prod[ViewBag.ElPedido.Gabinete-1].Precio</td>
-      
     </tr>
+    }
     <tr>
       <th scope="row">Total:</th>
       <td></td>

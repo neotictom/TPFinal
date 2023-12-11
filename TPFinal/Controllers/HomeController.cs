@@ -11,6 +11,7 @@ public class HomeController : Controller
 
     static Usuario user = null;
     static Pedido order = null;
+    static List<Pedido> listorder = new List<Pedido>();
     
     private readonly ILogger<HomeController> _logger;
 
@@ -33,6 +34,7 @@ public class HomeController : Controller
         ViewBag.Productos = prand; 
         ViewBag.UsuarioLogueado = user;
         ViewBag.ElPedido = order;
+        ViewBag.ListaPedidos = listorder;
         ViewBag.Prods = BD.ListarProductos();   
         Console.WriteLine(ViewBag.Prods);
         return View();
@@ -92,9 +94,8 @@ public class HomeController : Controller
         
         return View("Registrarse");
     }
-    public IActionResult Presupuesto(int CPU,int Motherboard,int RAM,int GPU,int Almacenamiento,int Cooler,int Gabinete,int Fuente){
+    public IActionResult Presupuesto(int CPU,int Motherboard,int RAM,int GPU,int Almacenamiento,int Cooler,int Gabinete,int Fuente, double pCPU){
         List <Producto> Productos = BD.ListarProductos();
-
         Console.WriteLine(CPU);
         Console.WriteLine(Motherboard);
         Console.WriteLine(RAM);
@@ -106,14 +107,14 @@ public class HomeController : Controller
 
         double tot = 0;
 
-        tot = (CPU!=0) ? tot+=Productos[CPU].Precio :  tot;
-        tot = (Motherboard!=0) ? tot+=Productos[Motherboard].Precio :  tot;
-        tot = (RAM!=0) ? tot+=Productos[RAM].Precio :  tot;
-        tot = (GPU!=0) ? tot+=Productos[GPU].Precio :  tot;
-        tot = (Almacenamiento!=0) ? tot+=Productos[Almacenamiento].Precio :  tot;
-        tot = (Cooler!=0) ? tot+=Productos[Cooler].Precio :  tot;
-        tot = (Gabinete!=0) ? tot+=Productos[Gabinete].Precio :  tot;
-        tot = (Fuente!=0) ? tot+=Productos[Fuente].Precio :  tot;
+        tot = (CPU!=0) ? tot+=Productos[CPU-1].Precio :  tot;
+        tot = (Motherboard!=0) ? tot+=Productos[Motherboard-1].Precio :  tot;
+        tot = (RAM!=0) ? tot+=Productos[RAM-1].Precio :  tot;
+        tot = (GPU!=0) ? tot+=Productos[GPU-1].Precio :  tot;
+        tot = (Almacenamiento!=0) ? tot+=Productos[Almacenamiento-1].Precio :  tot;
+        tot = (Cooler!=0) ? tot+=Productos[Cooler-1].Precio :  tot;
+        tot = (Gabinete!=0) ? tot+=Productos[Gabinete-1].Precio :  tot;
+        tot = (Fuente!=0) ? tot+=Productos[Fuente-1].Precio :  tot;
         
         //double tot = (MotherboardC[Motherboard - 1].Precio + CPUC[CPU - 1].Precio + GPUC[GPU - 1].Precio + RAMC[RAM].Precio + AlmacenamientoC[Almacenamiento].Precio + CoolerC[Cooler].Precio + GabineteC[Gabinete].Precio + FuenteC[Fuente].Precio);
         //Pedido p = {0,idMotherboard,idCPU,idRAM,idGPU,idAlmacenamiento,idCooler,idFuente,idGabinete,user. ,tot};
@@ -123,7 +124,8 @@ public class HomeController : Controller
         BD.AgregarPedido(Motherboard,CPU,GPU,RAM,Almacenamiento,Cooler,Gabinete,Fuente,user,tot);
         order = BD.BuscarPedidoInsertado(Motherboard,CPU,GPU,RAM,Almacenamiento,Cooler,Gabinete,Fuente,user,tot);
         ViewBag.ElPedido = order;
-        ViewBag.Prod = BD.ListarProductos();   
+        ViewBag.Prod = BD.ListarProductos();
+        listorder.Add(order);
         return View("Presupuesto");
     }
     public IActionResult UsuRegistrar(Usuario usu)
@@ -134,6 +136,7 @@ public class HomeController : Controller
     public IActionResult BuscarProducto(string nom){
         ViewBag.Prod = BD.BuscarProductoxnombre(nom);
         ViewBag.Busc = nom;
+        ViewBag.UsuarioLogueado = user;
         return View("BuscarProducto");
     }
 

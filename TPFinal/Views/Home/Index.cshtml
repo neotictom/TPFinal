@@ -55,10 +55,11 @@
   </table>
 @if(ViewBag.UsuarioLogueado != null){
   <h1>Pedidos</h1>
-  if(ViewBag.ElPedido == null){
+  if(ViewBag.ListaPedidos == null){
     <h2>Este Usuario aun no ha hecho pedidos</h2>
   }else{
-   <table class="table table-striped">
+@foreach(Pedido p in ViewBag.ListaPedidos){
+  <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">Comp</th>
@@ -68,63 +69,81 @@
     </tr>
   </thead>
   <tbody>
-  <tr>
+  @if(p.Motherboard > 0)
+  {
+    <tr>
       <th scope="row">Motherboard</th>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.Motherboard-1].Nombre</td>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.Motherboard-1].Precio</td>
+      <td>@ViewBag.Prods[p.Motherboard-1].Nombre</td>
+      <td>@ViewBag.Prods[p.Motherboard-1].Precio</td>
       
     </tr>
+    }
+    @if(p.CPU > 0)
+    {
     <tr>
       <th scope="row">CPU</th>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.CPU-1].Nombre</td>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.CPU-1].Precio</td>
-      
+      <td>@ViewBag.Prods[p.CPU-1].Nombre</td>
+      <td>@ViewBag.Prods[p.CPU-1].Precio</td>
     </tr>
-    
+    }
+    @if(p.RAM > 0)
+    {
     <tr>
       <th scope="row">RAM</th>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.RAM-1].Nombre</td>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.RAM-1].Precio</td>
-      
+      <td>@ViewBag.Prods[p.RAM-1].Nombre</td>
+      <td>@ViewBag.Prods[p.RAM-1].Precio</td>
     </tr>
+    }
+    @if(p.GPU > 0)
+    {
     <tr>
       <th scope="row">GPU</th>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.GPU-1].Nombre</td>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.GPU-1].Precio</td>
-      
+      <td>@ViewBag.Prods[p.GPU-1].Nombre</td>
+      <td>@ViewBag.Prods[p.GPU-1].Precio</td>
     </tr>
+    }
+    @if(p.Almacenamiento > 0)
+    {
     <tr>
       <th scope="row">Almacenamiento</th>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.Almacenamiento-1].Nombre</td>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.Almacenamiento-1].Precio</td>
-      
+      <td>@ViewBag.Prods[p.Almacenamiento-1].Nombre</td>
+      <td>@ViewBag.Prods[p.Almacenamiento-1].Precio</td>
     </tr>
+    }
+    @if(p.Cooler > 0)
+    {
     <tr>
       <th scope="row">Cooler</th>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.Cooler-1].Nombre</td>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.Cooler-1].Precio</td>
-      
+      <td>@ViewBag.Prods[p.Cooler-1].Nombre</td>
+      <td>@ViewBag.Prods[p.Cooler-1].Precio</td>
     </tr>
+    }
+    @if(p.Fuente > 0)
+    {
     <tr>
       <th scope="row">Fuente</th>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.Fuente-1].Nombre</td>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.Fuente-1].Precio</td>
-      
+      <td>@ViewBag.Prods[p.Fuente-1].Nombre</td>
+      <td>@ViewBag.Prods[p.Fuente-1].Precio</td>
     </tr>
+    }
+    @if(p.Gabinete > 0)
+    {
     <tr>
       <th scope="row">Gabinete</th>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.Gabinete-1].Nombre</td>
-      <td>@ViewBag.Prods[ViewBag.ElPedido.Gabinete-1].Precio</td>
-      
+      <td>@ViewBag.Prods[p.Gabinete-1].Nombre</td>
+      <td>@ViewBag.Prods[p.Gabinete-1].Precio</td>
     </tr>
+    }
     <tr>
       <th scope="row">Total:</th>
       <td></td>
-      <td>@ViewBag.ElPedido.Total</td>
+      <td>@p.Total</td>
       
     </tr>
   </tbody>
 </table>
+}
+
   }
 }else{
 
