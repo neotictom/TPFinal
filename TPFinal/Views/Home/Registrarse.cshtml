@@ -32,11 +32,9 @@
 <div>
     <label for="inputPassword6" class="col-form-label">Contraseña</label>
   <div class="col-auto">
-    <input name="Password" type="password" placeholder="Contraseña" id="Password" class="form-control" aria-describedby="passwordHelpInline" required>
+    <input name="Contraseña" type="password" placeholder="Contraseña" id="Contra" class="form-control" aria-describedby="passwordHelpInline" required>
   </div>
-    <span id="passwordHelpInline" class="form-text">
-      De 8-20 Caracteres.
-    </span>
+    <span>La contraseña debe tener: </span> <span style="color:red" id="largo">entre 8 y 100 caracteres</span><span style="color:red" id="caracterEspecial">, al menos un caracter especial</span><span style="color:red" id="letraMayuscula"> y al menos una letra en mayuscula.</span>
 </div>
 <div>
     <label for="inputPassword6" class="col-form-label">Mail</label>
@@ -74,6 +72,7 @@
       Ingrese su Foto de Perfil.
     </span>
 </div>
-  <button type="submit" class="btn btn-success">Registrarse</button>
+  <button type="submit" id="submitform" class="btn btn-success">Registrarse</button>
 </div>
 </form>
+<script src="~/js/site.js"></script>

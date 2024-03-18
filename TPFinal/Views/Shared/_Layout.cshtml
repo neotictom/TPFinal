@@ -20,9 +20,13 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
+                        
                         <li class="px-4">
                             <!--<button type="button" class="btn btn-primary " data-bs-theme="$white"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a></button>-->
                             <a class="nav-link text-white" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="px-4">
+                            <a class="nav-link text-white" asp-controller="Home" asp-action="Productos.cshtml">Productos</a>
                         </li>
                         <li class="px-4">
                             <!--<button type="button" class="btn btn-primary" data-bs-theme="$white"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Armadopc">Arma tu pc</a></button>-->
@@ -50,6 +54,9 @@
                             <input class="form-control me-2" type="text" placeholder="Buscar" aria-label="Search" name="nom" id="nom" required>
                             <button class="btn btn-outline-success" type="submit">Aceptar</button>
                         </form>
+                        </li>
+                        <li class="px-4">
+                            <a class="nav-link text-white fs-3"  asp-controller="Home" asp-action="Carrito">🛒</a>
                         </li>
                 </div>
                         <!--<form class="collapse d-sm-inline-flex">
