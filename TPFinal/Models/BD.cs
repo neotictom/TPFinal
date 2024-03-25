@@ -138,7 +138,22 @@ public class BD{
             string sql ="SELECT * FROM Usuario WHERE Username = @uUsername AND Password= @uContraseña";
             usu = db.QueryFirstOrDefault<Usuario>(sql,new {uUsername = usuario, uContraseña = contraseña});
             }
-        return usu;
+        return usu;             
     }
+    public static void GuardarProducto(Carrito c){
+        
+        string sql = "INSERT INTO CARRITO (IdProducto, IdUsuario) VALUES (@IdProducto, @IdUsuario)";
+        using(SqlConnection conexion = new SqlConnection(_connectionString)){
+            
+           conexion.Execute(sql, new{
+                IdProducto = c.IdProducto,
+                IdUsuario = c.IdUsuario,
+            });
+
+        }
+        
+    }
+
+
 
 }

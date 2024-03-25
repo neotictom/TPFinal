@@ -46,6 +46,7 @@ public class HomeController : Controller
         return BD.ObtenerProductoById(id);
     }
     public IActionResult Armadopc(Pedido p){
+        Console.WriteLine(user);
         ViewBag.Usuario = user;
         ViewBag.UsuarioLogueado = user;
         ViewBag.IdPedido = p.IdPedido;
@@ -150,7 +151,20 @@ public class HomeController : Controller
         
         return View("InicioSesion");
     }
-    
+    public IActionResult Productos(){
+        return View();
+    }
+    public IActionResult Carrito(){
+        ViewBag.UsuarioLogueado = user;
+        return View();
+    }
+
+    public IActionResult Perfil()
+    {
+        ViewBag.UsuarioLogueado = user;
+        return View();
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
