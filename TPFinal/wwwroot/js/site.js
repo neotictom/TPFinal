@@ -42,3 +42,19 @@ function VerDetalle(IdP){
   
 )
 }
+function MostrarImagen(IdP){
+  console.log(IdP)
+  $.ajax({
+    type: 'GET',
+    dataType: "JSON",
+    url: '/Home/ObtenerImg',
+    data: {id: IdP},
+    success:
+      function(response){
+        console.log(response)
+        $("#img").atrr("src", response.img);
+      }
+  }
+
+  )
+}

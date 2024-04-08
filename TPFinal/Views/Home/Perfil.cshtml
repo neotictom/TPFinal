@@ -2,5 +2,12 @@
     ViewData["Title"] = "Profile";
 }
 
-<h1>Hola, @ViewBag.UsuarioLogueado.Username</h1>
-<h2>Test</h2>
+<h1>@ViewBag.UsuarioLogueado.Username</h1>
+<img src="@ViewBag.UsuarioLogueado.FotoDePerfil">
+<h2>Nombre: @ViewBag.UsuarioLogueado.Nombre</h2>
+<h2>Apellido: @ViewBag.UsuarioLogueado.Apellido</h2>
+<h2>E-Mail: @ViewBag.UsuarioLogueado.Email</h2>
+<h2>Teléfono: +54 @ViewBag.UsuarioLogueado.Telefono</h2>
+<h2>Dirección: @ViewBag.UsuarioLogueado.Direccion</h2>
+<button class="btn btn-danger">Log Out</button>
+<button class="btn btn-info">Editar información</button>

@@ -199,3 +199,9 @@ body {
     left: 0;
     pointer-events:none;
 }
+
+.imgbox3 {
+    margin-top: 50px;
+    border-radius: 100%;
+    
+}

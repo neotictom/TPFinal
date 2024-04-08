@@ -148,12 +148,9 @@ public class HomeController : Controller
     
     public IActionResult CambiarContraseña(string Username,string Email,string Contraseña,string ContraseñaConfirmada)
     {
-        
         return View("InicioSesion");
     }
-    public IActionResult Productos(){
-        return View();
-    }
+    
     public IActionResult Carrito(){
         ViewBag.UsuarioLogueado = user;
         return View();
