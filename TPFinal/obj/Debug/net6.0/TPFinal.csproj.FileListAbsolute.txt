@@ -73,7 +73,6 @@ C:\Users\47496739\Downloads\TPFinal\TPFinal\obj\Debug\net6.0\staticwebassets.dev
 C:\Users\47496739\Downloads\TPFinal\TPFinal\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\47496739\Downloads\TPFinal\TPFinal\obj\Debug\net6.0\scopedcss\bundle\TPFinal.styles.css
 C:\Users\47496739\Downloads\TPFinal\TPFinal\obj\Debug\net6.0\scopedcss\projectbundle\TPFinal.bundle.scp.css
-C:\Users\47496739\Downloads\TPFinal\TPFinal\obj\Debug\net6.0\TPFinal.csproj.CopyComplete
 C:\Users\47496739\Downloads\TPFinal\TPFinal\obj\Debug\net6.0\TPFinal.genruntimeconfig.cache
 C:\Users\47496739\Downloads\TPFinal\TPFinal\obj\Debug\net6.0\ref\TPFinal.dll
 D:\Downloads\TPFinal\TPFinal\bin\Debug\net6.0\appsettings.Development.json
@@ -277,3 +276,5 @@ C:\Users\47496739\Downloads\tpfinal\TPFinal\TPFinal\obj\Debug\net6.0\refint\TPFi
 C:\Users\47496739\Downloads\tpfinal\TPFinal\TPFinal\obj\Debug\net6.0\TPFinal.pdb
 C:\Users\47496739\Downloads\tpfinal\TPFinal\TPFinal\obj\Debug\net6.0\TPFinal.genruntimeconfig.cache
 C:\Users\47496739\Downloads\tpfinal\TPFinal\TPFinal\obj\Debug\net6.0\ref\TPFinal.dll
+C:\Users\47496739\Downloads\TPFinal\TPFinal\obj\Debug\net6.0\TPFinal.sourcelink.json
+C:\Users\47496739\Downloads\TPFinal\TPFinal\obj\Debug\net6.0\TPFinal.csproj.Up2Date

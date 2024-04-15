@@ -42,8 +42,9 @@ public class HomeController : Controller
     public Producto ModalComp(int id){
         return BD.ObtenerProductoById(id);
     }
-    public Producto ObtenerImg(int id){
-        return BD.ObtenerProductoById(id);
+    public Carrito ObtenerProd(int id){
+        Usuario u = user;
+        return BD.GuardarProducto(id,u);
     }
     public IActionResult Armadopc(Pedido p){
         Console.WriteLine(user);
@@ -90,7 +91,7 @@ public class HomeController : Controller
         ViewBag.LoginError = "";
         return View("InicioSesion");
     }
-
+   
     public IActionResult Registrarse(){
         
         return View("Registrarse");
@@ -148,6 +149,17 @@ public class HomeController : Controller
     
     public IActionResult CambiarContraseña(string Username,string Email,string Contraseña,string ContraseñaConfirmada)
     {
+        int res = BD.CambiarContraseña(Username,Contraseña);
+        switch(res)
+        {
+            case 0:
+                return View("ContraseñaOlvidada");
+            break;
+
+            case 1:
+                return View("InicioSesion");
+            break;
+        }
         return View("InicioSesion");
     }
     
@@ -159,6 +171,12 @@ public class HomeController : Controller
     public IActionResult Perfil()
     {
         ViewBag.UsuarioLogueado = user;
+        return View();
+    }
+
+    public IActionResult EditarInfo()
+    {
+
         return View();
     }
 

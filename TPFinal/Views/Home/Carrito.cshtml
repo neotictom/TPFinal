@@ -8,6 +8,32 @@
     <script src="~/js/site.js"></script>
   </head>
   <body>
-  <h1> HOLA </h1>
+  <div class="container-sm text-center">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (int i = 0; i < ViewBag.Prod.Count; i++)
+      {
+        <tr>
+          <td>
+          
+            <img src="@ViewBag.Prod[i].img" class="img-fluid" alt="..." height="150px" width="150px">
+          
+          </td>
+          <td>@ViewBag.Prod[i].Nombre</td>
+          <td>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="VerDetalle(@ViewBag.Prod[i].IdProducto)">Mostrar info</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
   </body>
   

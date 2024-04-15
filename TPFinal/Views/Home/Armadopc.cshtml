@@ -11,7 +11,7 @@
 <select name="CPU" id="CPU">
 <option></option>
 @for(int i= 0; i<=(ViewBag.CPU.Count - 1); i++){
-<option name="CPU" id="CPU" value=@ViewBag.CPU[i].IdProducto data-bs-target="#showImg" onclick="MostrarImagen(ViewBag.CPU[i].IdProducto)">@ViewBag.CPU[i].Nombre </option>}
+<option name="CPU" id="CPU" value=@ViewBag.CPU[i].IdProducto>@ViewBag.CPU[i].Nombre </option>}
 </select>
 <br>
 

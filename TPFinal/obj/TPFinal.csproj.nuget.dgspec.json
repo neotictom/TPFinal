@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\47496739\\Downloads\\tpfinal\\TPFinal\\TPFinal\\TPFinal.csproj": {}
+    "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\TPFinal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\47496739\\Downloads\\tpfinal\\TPFinal\\TPFinal\\TPFinal.csproj": {
+    "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\TPFinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\47496739\\Downloads\\tpfinal\\TPFinal\\TPFinal\\TPFinal.csproj",
+        "projectUniqueName": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\TPFinal.csproj",
         "projectName": "TPFinal",
-        "projectPath": "C:\\Users\\47496739\\Downloads\\tpfinal\\TPFinal\\TPFinal\\TPFinal.csproj",
+        "projectPath": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\TPFinal.csproj",
         "packagesPath": "C:\\Users\\47496739\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\47496739\\Downloads\\tpfinal\\TPFinal\\TPFinal\\obj\\",
+        "outputPath": "C:\\Users\\47496739\\Downloads\\TPFinal\\TPFinal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

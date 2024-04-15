@@ -68,7 +68,7 @@ public class BD{
             });
         }
     }
-
+    
     public static Pedido BuscarPedidoInsertado(int idMotherboard,int idCPU,int idGPU,int idRAM,int idAlmacenamiento,int idCooler,int idGabinete,int idFuente,Usuario user,double tot)
     {
         Pedido ped = new Pedido();
@@ -115,7 +115,7 @@ public class BD{
         int resultado=0;
         using(SqlConnection db = new SqlConnection(_connectionString)){
             string sql="EXEC CambiarContraseña @Username, @Contraseña";
-            resultado=db.QueryFirstOrDefault<int>(sql, new{pUsername=username,pContraseña=contraseña});
+            resultado=db.QueryFirstOrDefault<int>(sql, new{Username=username,Contraseña=contraseña});
         }
         return resultado;
     }
@@ -140,18 +140,40 @@ public class BD{
             }
         return usu;             
     }
-    public static void GuardarProducto(Carrito c){
-        
+    public static Carrito GuardarProducto(int IdProducto,Usuario IdUsuario){
+        Carrito prodguard = null;
         string sql = "INSERT INTO CARRITO (IdProducto, IdUsuario) VALUES (@IdProducto, @IdUsuario)";
         using(SqlConnection conexion = new SqlConnection(_connectionString)){
             
-           conexion.Execute(sql, new{
-                IdProducto = c.IdProducto,
-                IdUsuario = c.IdUsuario,
+           prodguard = conexion.Execute(sql, new{
+                IdProducto = IdProducto,
+                IdUsuario = IdUsuario,
             });
 
         }
+        return prodguard;
         
+    }
+
+    public static void ActualizarUsuario(Usuario u) 
+    {
+        /*string sql = "INSERT INTO Usuario (Nombre, Apellido, Username, Password, Email, Telefono, Direccion, FotoDePerfil)" + 
+                 "VALUES (@Nombre, @Apellido, @Username, @Password, @Email, @Telefono, @Direccion, @FotoDePerfil);";*/
+        string sql = "Update Usuario Set Nombre = @Nombre, Apellido = @Apellido, Username = @Username, Email = @Email, Telefono = @Telefono, Direccion = @Direccion, FotoDePerfil = @FotoDePerfil Where IdUsuario = @IdUsuario;";
+        using (SqlConnection conexion = new SqlConnection(_connectionString))
+        {
+        conexion.Execute(sql, new
+        {
+            Nombre = u.Nombre,
+            Apellido = u.Apellido,
+            Username = u.Username,
+            Password = u.Password,
+            Email = u.Email,
+            Telefono = u.Telefono,
+            Direccion = u.Direccion,
+            FotoDePerfil = u.FotoDePerfil
+        });
+        }
     }
 
 

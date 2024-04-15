@@ -9,5 +9,5 @@
 <h2>E-Mail: @ViewBag.UsuarioLogueado.Email</h2>
 <h2>Teléfono: +54 @ViewBag.UsuarioLogueado.Telefono</h2>
 <h2>Dirección: @ViewBag.UsuarioLogueado.Direccion</h2>
-<button class="btn btn-danger">Log Out</button>
+<a class="btn btn-danger" href='@Url.Action("InicioSesion", "Home")' >Log Out</a>
 <button class="btn btn-info">Editar información</button>
