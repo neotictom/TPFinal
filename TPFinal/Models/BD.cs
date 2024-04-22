@@ -1,7 +1,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using Dapper;
-
+using TPFinal.Models;
 public class BD{
     private static string _connectionString = @"Server=localhost;DataBase=Techbuild;Trusted_Connection=True;";
     public static List<Producto> ObtenerProducto(string cat)
@@ -37,7 +37,7 @@ public class BD{
         }
        
     }
-
+    //Temp: Existe pero no se usa, porque existe esta función y porque apunta a un SP que no existe?
     public Usuario ObtenerUsuario(Usuario u) 
     {
 
@@ -140,19 +140,16 @@ public class BD{
             }
         return usu;             
     }
-    public static Carrito GuardarProducto(int IdProducto,Usuario IdUsuario){
-        Carrito prodguard = null;
+    public static void GuardarProducto(int IdProducto,Usuario IdUsuario){
+        
         string sql = "INSERT INTO CARRITO (IdProducto, IdUsuario) VALUES (@IdProducto, @IdUsuario)";
         using(SqlConnection conexion = new SqlConnection(_connectionString)){
-            
-           prodguard = conexion.Execute(sql, new{
+            conexion.Execute(sql, new{
                 IdProducto = IdProducto,
                 IdUsuario = IdUsuario,
             });
 
         }
-        return prodguard;
-        
     }
 
     public static void ActualizarUsuario(Usuario u) 

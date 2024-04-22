@@ -42,10 +42,13 @@ public class HomeController : Controller
     public Producto ModalComp(int id){
         return BD.ObtenerProductoById(id);
     }
-    public Carrito ObtenerProd(int id){
+    public IActionResult SaveProduct (int id){
+        Console.WriteLine(id);
         Usuario u = user;
-        return BD.GuardarProducto(id,u);
+        BD.GuardarProducto(id,u);
+        return View();
     }
+  
     public IActionResult Armadopc(Pedido p){
         Console.WriteLine(user);
         ViewBag.Usuario = user;
@@ -136,7 +139,8 @@ public class HomeController : Controller
         return View("InicioSesion");
     }
     public IActionResult BuscarProducto(string nom){
-        ViewBag.Prod = BD.BuscarProductoxnombre(nom);
+        List<Producto> p = BD.BuscarProductoxnombre(nom);
+        ViewBag.Prod = p;
         ViewBag.Busc = nom;
         ViewBag.UsuarioLogueado = user;
         return View("BuscarProducto");

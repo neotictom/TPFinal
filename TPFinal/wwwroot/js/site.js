@@ -42,20 +42,5 @@ function VerDetalle(IdP){
   
 )
 }
-function GuardarProducto(IdP){
-  console.log(IdP);
-  $.ajax(
-    {
-      
-      type: 'GET',
-      dataType: 'JSON',
-      url: '/Home/ObtenerProd',
-      data: {id: IdP},
-      success:
-        function(response){
-          console.log(response);
-        }
-    }
-  )
-}
+
 

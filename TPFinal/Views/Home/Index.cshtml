@@ -29,8 +29,9 @@
 </button>
 <br>
 <br>
-<button type="button" class="btn btn-primary" onclick="GuardarProducto(@ViewBag.Productos[a].IdProducto)">
-  Agregar al Carrito</button>
+<form class="d-flex" action='@Url.Action("BuscarProducto")'>
+<button type="button" class="btn btn-primary" name="id" id="@ViewBag.Productos[a].IdProducto">
+  Agregar al Carrito</button></form>
 </div>
   </div>  
  
