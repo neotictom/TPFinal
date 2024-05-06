@@ -12,7 +12,7 @@ public class HomeController : Controller
     static Usuario user = null;
     static Pedido order = null;
     static List<Pedido> listorder = new List<Pedido>();
-    
+    static string filtro;
     private readonly ILogger<HomeController> _logger;
 
     public HomeController(ILogger<HomeController> logger)
@@ -42,11 +42,13 @@ public class HomeController : Controller
     public Producto ModalComp(int id){
         return BD.ObtenerProductoById(id);
     }
-    public IActionResult SaveProduct (int id){
+    public IActionResult GuardarCarrito (int id){ //Es void y hace un return XD
         Console.WriteLine(id);
         Usuario u = user;
-        BD.GuardarProducto(id,u);
-        return View();
+        int idusu = u.IdUsuario;
+        BD.GuardarProducto(id,idusu);
+        return View("Carrito");
+       
     }
   
     public IActionResult Armadopc(Pedido p){
@@ -135,15 +137,42 @@ public class HomeController : Controller
     }
     public IActionResult UsuRegistrar(Usuario usu)
     {
-        BD.RegistrarUsuario(usu);
-        return View("InicioSesion");
+        bool samUs = BD.ExisteCuentaConMismoUsuario(usu.Username);
+        bool samMail = BD.ExisteCuentaConMismoMail(usu.Email);
+        if(samUs)
+        {
+            ViewBag.RegError = "Error al Registrarse: Ya exsiste usuario con el mismo username";
+            return View("Registrarse");
+        }
+        else if (samMail)
+        {
+            ViewBag.RegError = "Error al Registrarse: Ya exsiste usuario con el mismo E-Mail";
+            return View("Registrarse");
+        }
+        else if(!samUs & !samMail)
+        {
+            BD.RegistrarUsuario(usu);
+            return View("InicioSesion");
+        }
+        return View("Registrarse");
     }
     public IActionResult BuscarProducto(string nom){
         List<Producto> p = BD.BuscarProductoxnombre(nom);
         ViewBag.Prod = p;
         ViewBag.Busc = nom;
+        filtro = ViewBag.Busc;
         ViewBag.UsuarioLogueado = user;
         return View("BuscarProducto");
+    }
+    public IActionResult FiltrarProducto(string n){
+        List<Producto> p = BD.ObtenerProducto(n);
+        ViewBag.VerFiltro = true;
+        ViewBag.Prod = p;
+        ViewBag.Busc = filtro;
+        ViewBag.UsuarioLogueado = user;
+        ViewBag.ProductoFiltrado = n;
+        return View("BuscarProducto");
+        
     }
 
     public IActionResult ContraseñaOlvidada()
@@ -167,10 +196,7 @@ public class HomeController : Controller
         return View("InicioSesion");
     }
     
-    public IActionResult Carrito(){
-        ViewBag.UsuarioLogueado = user;
-        return View();
-    }
+ 
 
     public IActionResult Perfil()
     {
@@ -180,8 +206,25 @@ public class HomeController : Controller
 
     public IActionResult EditarInfo()
     {
+        ViewBag.UsuarioLogueado = user;
+        return View("EdicionPerfil");
+    }
 
-        return View();
+    public IActionResult Edicion(string Nombre, string Apellido, string EMail, string Telefono, string Direccion)
+    {
+        Usuario bob = new Usuario();
+        bob.IdUsuario = user.IdUsuario;
+        bob.Nombre = Nombre;
+        bob.Apellido = Apellido;
+        bob.Email = EMail;
+        bob.Telefono = Telefono;
+        bob.Direccion = Direccion;
+        bob.Username = user.Username;
+        bob.Password = user.Password;
+        BD.ActualizarUsuario(bob);
+        ViewBag.EditSuccess = "Perfil Editado Correctamente";
+        ViewBag.UsuarioLogueado = bob;
+        return View("Perfil");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -190,6 +233,17 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-
+    public IActionResult Carrito (){
+        List <Carrito> c = BD.ListarCarrito();
+        List <Producto> plist = new List<Producto>();
+        Producto p = new Producto();
+        for(int i = 0; i<c.Count; i++){
+            p = BD.ObtenerProductoById(c[i].IdProducto);
+            plist.Add(p);
+        }
+        ViewBag.Prod = plist;
+        ViewBag.UsuarioLogueado = user;
+        return View();
+    }
 
 }

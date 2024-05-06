@@ -2,15 +2,7 @@
     ViewData["Title"] = "Profile";
 }
 
-<h1>@ViewBag.UsuarioLogueado.Username</h1>
-<img src="@ViewBag.UsuarioLogueado.FotoDePerfil">
-<h2>Nombre: @ViewBag.UsuarioLogueado.Nombre</h2>
-<h2>Apellido: @ViewBag.UsuarioLogueado.Apellido</h2>
-<h2>E-Mail: @ViewBag.UsuarioLogueado.Email</h2>
-<h2>Teléfono: +54 @ViewBag.UsuarioLogueado.Telefono</h2>
-<h2>Dirección: @ViewBag.UsuarioLogueado.Direccion</h2>
-
-<form method="get" action=''>
+<form method="get" action='Edicion'>
 <div class="pt-5 mb-5">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Nombre</label>
@@ -25,14 +17,11 @@
     <!-- ingrese contraseña -->
   <div class="mb-3">
     <label for="inputPassword5" class="form-label">E-Mail</label>
-    <input name="E-Mail" type="email" placeholder="E-Mail" aria-label="E-Mail" aria-describedby="basic-addon1" id="EMail">
-    <div id="infocontraseña" class="form-text">
-      <span>La contraseña debe tener: </span> <span style="color:red" id="largo">entre 8 y 100 caracteres</span><span style="color:red" id="caracterEspecial">, al menos un caracter especial</span><span style="color:red" id="letraMayuscula"> y al menos una letra en mayuscula.</span>
-    </div>
+    <input name="EMail" type="email" placeholder="E-Mail" aria-label="E-Mail" aria-describedby="basic-addon1" id="EMail">
 </div>
 
 <div class="mb-3">
-<label for="inputPassword5" class="form-label">Teléfono</label>
+<label for="exampleInputEmail1" class="form-label">Teléfono</label>
 <input name="Telefono" type="text" placeholder="Teléfono" aria-label="ConfPass" aria-describedby="basic-addon1" id="Telefono">
     <div id="coincidenciacontras" class="form-text">
         <span id="coinciden"style="color:red"></span>
@@ -40,11 +29,8 @@
 </div>
 
 <div class="mb-3">
-<label for="inputPassword5" class="form-label">Dirección</label>
-<input name="Direccion" type="password" placeholder="Dirección" aria-label="Direccion" aria-describedby="basic-addon1" id="Direccion">
-    <div id="coincidenciacontras" class="form-text">
-        <span id="coinciden"style="color:red"></span>
-    </div>
+<label for="exampleInputEmail1" class="form-label">Dirección</label>
+<input name="Direccion" type="text" placeholder="Dirección" aria-label="Direccion" aria-describedby="basic-addon1" id="Direccion">
 </div>
 
   <button type="submit"  id="submitform" class="btn btn-info">Actualizar Perfil</button>

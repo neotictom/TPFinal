@@ -73,6 +73,10 @@
     </span>
 </div>
   <button type="submit" id="submitform" class="btn btn-success">Registrarse</button>
+  @if(ViewBag.RegError != null)
+  {
+    <p style="color: crimson;" class="mb-2">@ViewBag.RegError</p>
+  }
 </div>
 </form>
 <script src="~/js/site.js"></script>

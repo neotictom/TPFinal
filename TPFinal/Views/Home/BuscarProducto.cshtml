@@ -3,6 +3,14 @@
 }
 <link rel="stylesheet" href="~/css/site.css">
 <h1>Debido a que buscaste "@ViewBag.Busc":</h1>
+<form class="d-flex" action='@Url.Action("FiltrarProducto")'>
+<input class="form-control me-2" type="text" placeholder="Buscar" aria-label="Search" name="n" id="n" required>
+<button class="btn btn-outline-success" type="submit">Filtrar</button>
+<br>
+@if(ViewBag.VerFiltro = true){
+  <h2>Filtrado por "@ViewBag.ProductoFiltrado"</h2>
+}
+</form>
 <div class="container-sm text-center">
   <table class="table">
     <thead>
@@ -24,6 +32,11 @@
           <td>@ViewBag.Prod[i].Nombre</td>
           <td>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="VerDetalle(@ViewBag.Prod[i].IdProducto)">Mostrar info</button>
+          </td>
+          <td>
+          <button type="button" class="btn btn-primary" onclick="agregarAlCarrito(@ViewBag.Prod[i].IdProducto)">
+          Agregar al Carrito
+        </button>
           </td>
         </tr>
       }

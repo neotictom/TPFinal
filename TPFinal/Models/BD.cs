@@ -37,7 +37,7 @@ public class BD{
         }
        
     }
-    //Temp: Existe pero no se usa, porque existe esta función y porque apunta a un SP que no existe?
+    //Temp: Existe pero no se usa, ¿Por qué existe esta función y por que apunta a un SP que no existe?
     public Usuario ObtenerUsuario(Usuario u) 
     {
 
@@ -49,6 +49,57 @@ public class BD{
         }
         return user;
     }
+
+   public static bool ExisteCuentaConMismoUsuario(string user)
+    {
+        List<Usuario> usWSameName = new List<Usuario>();
+        int i = 0;
+        string sql = "Select * From Usuario Where Username = @Username";
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            usWSameName = db.Query<Usuario>(sql, new { Username = user }).ToList();
+        }
+        if(usWSameName.Count == 0)
+        {
+            Console.WriteLine("NO SE ENCONTRARON USUARIOS CON EL MISMO NOMBRE");
+            return false;
+        }
+        else
+        {
+            Console.WriteLine("SE ENCONTRARON USUARIOS CON EL MISMO NOMBRE");
+            return true;
+        } 
+
+        /*if(usWSameName != null)
+        {
+            while(i <= usWSameName.Length - 1)
+            {
+
+            }
+        } */
+    }
+    
+
+    public static bool ExisteCuentaConMismoMail(string email)
+    {
+        List<Usuario> usWSameMail = new List<Usuario>();
+        string sql = "Select * From Usuario Where Email = @Email";
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            usWSameMail = db.Query<Usuario>(sql, new { Email = email }).ToList();
+        }
+        if(usWSameMail.Count == 0)
+        {
+            Console.WriteLine("NO SE ENCONTRARON USUARIOS CON EL MISMO MAIL");
+            return false;
+        }
+        else
+        {
+            Console.WriteLine("SE ENCONTRARON USUARIOS CON EL MISMO MAIL");
+            return true;
+        }
+    }
+
     public static void AgregarPedido(int idMotherboard,int idCPU,int idGPU,int idRAM,int idAlmacenamiento,int idCooler,int idGabinete,int idFuente,Usuario user,double tot){
         string sql = "INSERT INTO Pedido (Motherboard,CPU,RAM,GPU,Almacenamiento,Cooler,Fuente,Gabinete,IdUsuario,Total)" + 
                  "VALUES (@Motherboard,@CPU,@RAM,@GPU,@Almacenamiento,@Cooler,@Fuente,@Gabinete,@IdUsuario,@Total);";
@@ -125,6 +176,12 @@ public class BD{
             return conexion.Query<Producto>(sql).ToList();
         }
     }
+    public static List<Carrito> ListarCarrito(){
+        using(SqlConnection conexion = new SqlConnection(_connectionString)){
+            string sql = "SELECT * FROM Carrito";
+            return conexion.Query<Carrito>(sql).ToList();
+        }
+    }
     public static List<Usuario> MostrarPedidoDeUsuario(){
         using(SqlConnection conexion = new SqlConnection(_connectionString)){
             string sql = $"SELECT p.Motherboard, p.CPU. p.RAM, u.Id_Usuario FROM Pedido p";
@@ -140,7 +197,7 @@ public class BD{
             }
         return usu;             
     }
-    public static void GuardarProducto(int IdProducto,Usuario IdUsuario){
+    public static void GuardarProducto(int IdProducto,int IdUsuario){
         
         string sql = "INSERT INTO CARRITO (IdProducto, IdUsuario) VALUES (@IdProducto, @IdUsuario)";
         using(SqlConnection conexion = new SqlConnection(_connectionString)){
@@ -150,25 +207,25 @@ public class BD{
             });
 
         }
-    }
+        
+    } 
 
     public static void ActualizarUsuario(Usuario u) 
     {
         /*string sql = "INSERT INTO Usuario (Nombre, Apellido, Username, Password, Email, Telefono, Direccion, FotoDePerfil)" + 
                  "VALUES (@Nombre, @Apellido, @Username, @Password, @Email, @Telefono, @Direccion, @FotoDePerfil);";*/
-        string sql = "Update Usuario Set Nombre = @Nombre, Apellido = @Apellido, Username = @Username, Email = @Email, Telefono = @Telefono, Direccion = @Direccion, FotoDePerfil = @FotoDePerfil Where IdUsuario = @IdUsuario;";
+        string sql = "Update Usuario Set Nombre = @Nombre, Apellido = @Apellido, Email = @Email, Telefono = @Telefono, Direccion = @Direccion, FotoDePerfil = @FotoDePerfil Where IdUsuario = @IdUsuario;";
         using (SqlConnection conexion = new SqlConnection(_connectionString))
         {
         conexion.Execute(sql, new
         {
             Nombre = u.Nombre,
             Apellido = u.Apellido,
-            Username = u.Username,
-            Password = u.Password,
             Email = u.Email,
             Telefono = u.Telefono,
             Direccion = u.Direccion,
-            FotoDePerfil = u.FotoDePerfil
+            FotoDePerfil = u.FotoDePerfil,
+            IdUsuario = u.IdUsuario
         });
         }
     }

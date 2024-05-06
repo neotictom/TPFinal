@@ -11,7 +11,6 @@ function ValidarContraseña()
     
     if (reg.test(Pass.value)) 
       {
-        alert("La contraseña es válida :).")
         return true
       } 
       else 
@@ -42,5 +41,11 @@ function VerDetalle(IdP){
   
 )
 }
+function agregarAlCarrito(idProducto) {
+  // Redireccionar a la acción GuardarCarrito del controlador HomeController con el ID del producto como parámetro en la URL
+  window.location.href = '/Home/GuardarCarrito?id=' + idProducto;
+}
+
+
 
 
